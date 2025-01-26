@@ -3,6 +3,7 @@ import Banner from "../../Components/Banner/Banner";
 import Hero from "../../Components/Hero/Hero";
 import { FaCoffee } from "react-icons/fa";
 import Footer from "../../Components/Footer/Footer";
+import CoffeeCard from "../../Components/CoffeeCard/CoffeeCard";
 
 
 const Home = () => {
@@ -18,16 +19,29 @@ const Home = () => {
                     <h1 className="font-rancho text-3xl stroke-black lg:text-6xl drop-shadow-2xl">Our Popular Products</h1>
                     <Link className="flex justify-center"><button className="flex gap-1 items-center font-rancho btn shadow-none border-0 text-white text-xl bg-[#E3B577]">Add Coffee <FaCoffee></FaCoffee></button></Link>
                 </div>
+
+                <div className=" lg:max-w-7xl mx-auto ">
+
+                    <div className=" mx-auto w-fit grid grid-flow-row lg:grid-cols-2 justify-center items-center gap-9 ">
+
+                        <CoffeeCard></CoffeeCard>   
+                        <CoffeeCard></CoffeeCard>   
+                        <CoffeeCard></CoffeeCard>   
+                        <CoffeeCard></CoffeeCard>   
+                        <CoffeeCard></CoffeeCard>   
+                        <CoffeeCard></CoffeeCard>   
+                    </div>
+                </div>
             </div>
 
 
             {/* Follow Section */}
-            <div className="lg:max-w-7xl max-w-xs mx-auto">
+            <div className="lg:max-w-7xl max-w-lg mx-auto">
                 <div className="flex flex-col items-center my-14 justify-center">
                     <p>Follow Us Now</p>
-                    <h1 className="font-rancho text-6xl">Follow on Instagram</h1>
+                    <h1 className="font-rancho text-3xl lg:text-6xl">Follow on Instagram</h1>
                 </div>
-                <div className="grid lg:grid-cols-4 lg:gap-16 gap-7 grid-cols-2">
+                <div className="grid mx-auto w-fit lg:grid-cols-4 lg:gap-16 gap-4 grid-cols-3">
                     <img className="lg:w-3xs lg:h-[256px] h-[112px] w-28" src="/src/assets/images/cups/Rectangle 9.png" alt="" />
                     <img className="lg:w-3xs lg:h-[256px] h-[112px] w-28" src="/src/assets/images/cups/Rectangle 10.png" alt="" />
                     <img className="lg:w-3xs lg:h-[256px] h-[112px] w-28" src="/src/assets/images/cups/Rectangle 11.png" alt="" />
@@ -38,8 +52,6 @@ const Home = () => {
                     <img className="lg:w-3xs lg:h-[256px] h-[112px] w-28" src="/src/assets/images/cups/Rectangle 16.png" alt="" />
                 </div>
             </div>
-
-            <Footer></Footer>
         </div>
     );
 };

@@ -3,7 +3,6 @@ import {
   FaFacebook,
   FaInstagram,
   FaLinkedinIn,
-  FaMailBulk,
   FaPhone,
   FaTwitter,
 } from "react-icons/fa";
@@ -13,7 +12,7 @@ const Footer = () => {
   return (
     <>
       <div className="bg-[url('https://i.ibb.co.com/2trFcPk/13.jpg')] mt-17 py-16">
-        <div className="lg:max-w-7xl max-w-xs mx-auto">
+        <div className="lg:max-w-7xl max-w-sm mx-auto">
           <img
             src="/src/assets/images/more/logo1.png"
             className="lg:h-20 h-16"
@@ -56,27 +55,27 @@ const Footer = () => {
               <h1 className="font-rancho text-3xl lg:text-5xl font-semibold">
                 Connect With Us
               </h1>
-              <label className="input input-bordered flex items-center gap-2">
+              <label className="input input-bordered font-semibold font-raleway w-full flex items-center gap-2">
                 Name
                 <input
                   type="text"
                   className="grow border-none"
-                  placeholder="Daisy"
+                  placeholder="Your Name"
                 />
               </label>
-              <label className="input input-bordered flex items-center gap-2">
+              <label className="input input-bordered font-semibold font-raleway flex w-full items-center gap-2">
                 Email
                 <input
                   type="text"
                   className="grow border-none"
-                  placeholder="daisy@site.com"
+                  placeholder="Your Mail"
                 />
               </label>
               <textarea
-                className="textarea border-none"
+                className="textarea font-semibold font-raleway w-full border-none"
                 placeholder="Message"
               ></textarea>
-              <button className="btn  w-fit btn-outline rounded-4xl font-rancho text-xl btn-secondary">
+              <button className="btn   w-fit btn-outline rounded-4xl font-rancho text-xl btn-secondary">
                 Send Message
               </button>
             </div>
