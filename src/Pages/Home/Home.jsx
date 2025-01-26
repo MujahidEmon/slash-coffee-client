@@ -17,7 +17,7 @@ const Home = () => {
                 <div className="flex flex-col items-center justify-center gap-3 my-14">
                     <p>--- Sip & Savor ---</p>
                     <h1 className="font-rancho text-3xl stroke-black lg:text-6xl drop-shadow-2xl">Our Popular Products</h1>
-                    <Link className="flex justify-center"><button className="flex gap-1 items-center font-rancho btn shadow-none border-0 text-white text-xl bg-[#E3B577]">Add Coffee <FaCoffee></FaCoffee></button></Link>
+                    <Link to={'/addCoffee'} className="flex justify-center"><button className="flex gap-1 items-center font-rancho btn shadow-none border-0 text-white text-xl bg-[#E3B577]">Add Coffee <FaCoffee></FaCoffee></button></Link>
                 </div>
 
                 <div className=" lg:max-w-7xl mx-auto ">

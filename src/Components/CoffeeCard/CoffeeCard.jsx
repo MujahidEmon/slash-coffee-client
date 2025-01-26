@@ -4,6 +4,7 @@ import { FiDelete } from "react-icons/fi";
 import { IoEye } from "react-icons/io5";
 import { MdDelete, MdEdit } from "react-icons/md";
 import { RiDeleteBin2Fill } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 
 const CoffeeCard = () => {
@@ -17,9 +18,9 @@ const CoffeeCard = () => {
                     <p><span className="font-bold">Price: </span>9$</p>
                 </div>
                 <div className="flex flex-col justify-center gap-4 items-center">
-                    <button><IoEye size={25}></IoEye></button>
-                    <button><MdEdit size={25}></MdEdit></button>
-                    <button><MdDelete size={25}></MdDelete></button>
+                    <Link className="bg-amber-100 btn"><IoEye size={25}></IoEye></Link>
+                    <Link to={'/updateCoffee'} className="btn bg-emerald-500"><MdEdit size={25}></MdEdit></Link>
+                    <Link className="btn bg-accent"><MdDelete size={25}></MdDelete></Link>
                 </div>
             </div>
         </div>
