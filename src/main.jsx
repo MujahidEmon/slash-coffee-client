@@ -8,6 +8,7 @@ import Home from './Pages/Home/Home.jsx'
 import ErrorPage from './Pages/ErrorPage/ErrorPage.jsx'
 import AddCoffeePage from './Pages/AddCoffeePage/AddCoffeePage.jsx'
 import UpdatePage from './Pages/UpdatePage/UpdatePage.jsx'
+import CoffeeDetailsPage from './Pages/CoffeeDetailsPage/CoffeeDetailsPage.jsx'
 
 
 const router = createBrowserRouter([
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: '/updateCoffee',
         element: <UpdatePage></UpdatePage>
+      },
+      {
+        path: '/coffeeDetails',
+        element: <CoffeeDetailsPage></CoffeeDetailsPage>
       }
     ]
   }

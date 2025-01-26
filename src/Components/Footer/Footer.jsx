@@ -21,7 +21,7 @@ const Footer = () => {
 
           <div className="flex lg:flex-row flex-col justify-between">
             {/* Left */}
-            <div className="flex flex-col gap-3 lg:w-1/2 w-full">
+            <div className="flex flex-col gap-6 lg:w-1/2 w-full">
               <h1 className="font-rancho text-3xl lg:text-5xl font-semibold">
                 Slash Coffee Emporium
               </h1>
@@ -29,14 +29,14 @@ const Footer = () => {
                 Always ready to be your friend. Come & Contact with us to share
                 your memorable moments, to share with your best companion.
               </p>
-              <div className="flex gap-2 items-center">
-                <FaFacebook size={30}></FaFacebook>
-                <FaInstagram size={30}></FaInstagram>
-                <FaTwitter size={30}></FaTwitter>
-                <FaLinkedinIn size={30}></FaLinkedinIn>
+              <div className="flex gap-5 items-center">
+                <FaFacebook color="blue" size={30}></FaFacebook>
+                <FaInstagram color="orange" size={30}></FaInstagram>
+                <FaTwitter color="cyan" size={30}></FaTwitter>
+                <FaLinkedinIn color="blue" size={30}></FaLinkedinIn>
               </div>
 
-              <h1 className="font-rancho text-3xl lg:text-5xl font-semibold mt-6">
+              <h1 className="font-rancho text-2xl lg:text-4xl  mt-6">
                 Get In Touch
               </h1>
               <div className="flex items-center gap-1">

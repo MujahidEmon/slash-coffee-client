@@ -18,7 +18,7 @@ const CoffeeCard = () => {
                     <p><span className="font-bold">Price: </span>9$</p>
                 </div>
                 <div className="flex flex-col justify-center gap-4 items-center">
-                    <Link className="bg-amber-100 btn"><IoEye size={25}></IoEye></Link>
+                    <Link to={'/coffeeDetails'} className="bg-amber-100 btn"><IoEye size={25}></IoEye></Link>
                     <Link to={'/updateCoffee'} className="btn bg-emerald-500"><MdEdit size={25}></MdEdit></Link>
                     <Link className="btn bg-accent"><MdDelete size={25}></MdDelete></Link>
                 </div>
