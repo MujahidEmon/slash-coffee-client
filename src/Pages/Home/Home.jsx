@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Banner from "../../Components/Banner/Banner";
 import Hero from "../../Components/Hero/Hero";
 import { FaCoffee } from "react-icons/fa";
+import Footer from "../../Components/Footer/Footer";
 
 
 const Home = () => {
@@ -26,7 +27,7 @@ const Home = () => {
                     <p>Follow Us Now</p>
                     <h1 className="font-rancho text-6xl">Follow on Instagram</h1>
                 </div>
-                <div className="grid lg:grid-cols-4 lg:gap-16 gap-7 grid-cols-3">
+                <div className="grid lg:grid-cols-4 lg:gap-16 gap-7 grid-cols-2">
                     <img className="lg:w-3xs lg:h-[256px] h-[112px] w-28" src="/src/assets/images/cups/Rectangle 9.png" alt="" />
                     <img className="lg:w-3xs lg:h-[256px] h-[112px] w-28" src="/src/assets/images/cups/Rectangle 10.png" alt="" />
                     <img className="lg:w-3xs lg:h-[256px] h-[112px] w-28" src="/src/assets/images/cups/Rectangle 11.png" alt="" />
@@ -37,6 +38,8 @@ const Home = () => {
                     <img className="lg:w-3xs lg:h-[256px] h-[112px] w-28" src="/src/assets/images/cups/Rectangle 16.png" alt="" />
                 </div>
             </div>
+
+            <Footer></Footer>
         </div>
     );
 };
