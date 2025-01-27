@@ -1,7 +1,46 @@
+import Swal from 'sweetalert2'
 const AddForm = () => {
+
+  const handleAddCoffee = e => {
+    e.preventDefault();
+
+    const form = new FormData(e.currentTarget);
+
+    const name = form.get('name')
+    const chef = form.get('chef')
+    const supplier = form.get('supplier')
+    const taste = form.get('taste')
+    const category = form.get('category')
+    const details = form.get('details')
+    const photo = form.get('photo')
+
+    const newCoffee = {name, chef, supplier, taste, category, details, photo}
+    console.log(newCoffee);
+
+
+    // Sending data to Server
+    fetch('http://localhost:5000/coffees', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(newCoffee)
+    })
+    .then(res=> res.json())
+    .then(data => {
+      console.log(data);
+      Swal.fire({
+        title: 'User Added Successfully',
+        // text: 'Do you want to continue',
+        icon: 'success',
+        confirmButtonText: 'Back'
+      })
+    })
+  }
+
   return (
     <div className="">
-      <form>
+      <form onSubmit={handleAddCoffee}>
         <div className="grid sm:grid-cols-2 gap-6">
           <div>
             <label className="text-gray-600 text-sm mb-2 block font-bold">
@@ -79,12 +118,8 @@ const AddForm = () => {
         </div>
 
         <div className="mt-8">
-          <button
-            type="button"
-            className="btn font-rancho bg-[#D2B48C] w-full text-xl text-white hover:text-black"
-          >
-            Add Coffee
-          </button>
+          
+          <input className="btn font-rancho bg-[#D2B48C] w-full text-xl text-white hover:text-black" type="submit" value="Add Coffee" />
         </div>
       </form>
     </div>

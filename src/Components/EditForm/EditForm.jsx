@@ -83,12 +83,7 @@ const EditForm = () => {
         </div>
 
         <div className="mt-8">
-          <button
-            type="button"
-            className="btn font-rancho bg-[#D2B48C] w-full text-xl text-white hover:text-black"
-          >
-            Update
-          </button>
+        <input className="btn font-rancho bg-[#D2B48C] w-full text-xl text-white hover:text-black" type="submit" value="Update Coffee" />
         </div>
       </form>
     </div>

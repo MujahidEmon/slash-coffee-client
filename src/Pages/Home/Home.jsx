@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Banner from "../../Components/Banner/Banner";
 import Hero from "../../Components/Hero/Hero";
 import { FaCoffee } from "react-icons/fa";
@@ -7,6 +7,7 @@ import CoffeeCard from "../../Components/CoffeeCard/CoffeeCard";
 
 
 const Home = () => {
+    const coffees = useLoaderData();
     return (
         <div className="">
             <Hero></Hero>
@@ -24,12 +25,10 @@ const Home = () => {
 
                     <div className=" mx-auto w-fit grid grid-flow-row lg:grid-cols-2 justify-center items-center gap-9 ">
 
-                        <CoffeeCard></CoffeeCard>   
-                        <CoffeeCard></CoffeeCard>   
-                        <CoffeeCard></CoffeeCard>   
-                        <CoffeeCard></CoffeeCard>   
-                        <CoffeeCard></CoffeeCard>   
-                        <CoffeeCard></CoffeeCard>   
+                        {
+                            coffees.map((coffee,_id) => <CoffeeCard key={_id} coffee={coffee}></CoffeeCard>)
+                        }
+                        
                     </div>
                 </div>
             </div>
