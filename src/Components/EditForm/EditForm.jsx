@@ -1,4 +1,5 @@
-const EditForm = () => {
+const EditForm = ({coffee}) => {
+  const {name, chef, category, photo, taste, supplier, _id, details} = coffee;
   return (
     <div>
       <form>
@@ -12,6 +13,7 @@ const EditForm = () => {
               type="text"
               className=" w-full text-gray-800 text-sm px-4 py-3 rounded input bg-white "
               placeholder="Enter Coffee Name"
+              defaultValue={name}
             />
           </div>
           <div>
@@ -23,6 +25,7 @@ const EditForm = () => {
               type="text"
               className="w-full text-gray-800 text-sm px-4 py-3 rounded input bg-white "
               placeholder="Enter Chef Name"
+              defaultValue={chef}
             />
           </div>
           <div>
@@ -34,6 +37,7 @@ const EditForm = () => {
               type="text"
               className="w-full text-gray-800 text-sm px-4 py-3 rounded input bg-white "
               placeholder="Enter Supplier"
+              defaultValue={supplier}
             />
           </div>
           <div>
@@ -45,6 +49,7 @@ const EditForm = () => {
               type="text"
               className="w-full text-gray-800 text-sm px-4 py-3 rounded input bg-white "
               placeholder="What about Taste?"
+              defaultValue={taste}
             />
           </div>
           <div>
@@ -56,6 +61,7 @@ const EditForm = () => {
               type="text"
               className="w-full text-gray-800 text-sm px-4 py-3 rounded input bg-white "
               placeholder="Coffee Category?"
+              defaultValue={category}
             />
           </div>
           <div>
@@ -67,6 +73,7 @@ const EditForm = () => {
               type="text"
               className="w-full text-gray-800 text-sm px-4 py-3 rounded input bg-white "
               placeholder="In Brief"
+              defaultValue={details}
             />
           </div>
           <div className="">
@@ -78,6 +85,7 @@ const EditForm = () => {
               type="text"
               className="w-full text-gray-800 text-sm px-4 py-3 rounded input bg-white "
               placeholder="Give a photoURL"
+              defaultValue={photo}
             />
           </div>
         </div>
