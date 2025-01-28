@@ -9,6 +9,8 @@ import ErrorPage from './Pages/ErrorPage/ErrorPage.jsx'
 import AddCoffeePage from './Pages/AddCoffeePage/AddCoffeePage.jsx'
 import UpdatePage from './Pages/UpdatePage/UpdatePage.jsx'
 import CoffeeDetailsPage from './Pages/CoffeeDetailsPage/CoffeeDetailsPage.jsx'
+import Login from './Pages/Login/Login.jsx'
+import Register from './Pages/Register/Register.jsx'
 
 
 const router = createBrowserRouter([
@@ -34,6 +36,14 @@ const router = createBrowserRouter([
       {
         path: '/coffeeDetails',
         element: <CoffeeDetailsPage></CoffeeDetailsPage>
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
       }
     ]
   }

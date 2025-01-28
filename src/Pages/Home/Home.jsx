@@ -4,10 +4,13 @@ import Hero from "../../Components/Hero/Hero";
 import { FaCoffee } from "react-icons/fa";
 import Footer from "../../Components/Footer/Footer";
 import CoffeeCard from "../../Components/CoffeeCard/CoffeeCard";
+import { useState } from "react";
 
 
 const Home = () => {
-    const coffees = useLoaderData();
+    const loadedCoffees = useLoaderData();
+    const [coffees, setCoffees] = useState(loadedCoffees)
+
     return (
         <div className="">
             <Hero></Hero>
@@ -26,7 +29,7 @@ const Home = () => {
                     <div className=" mx-auto w-fit grid grid-flow-row lg:grid-cols-2 justify-center items-center gap-9 ">
 
                         {
-                            coffees.map((coffee,_id) => <CoffeeCard key={_id} coffee={coffee}></CoffeeCard>)
+                            coffees.map((coffee,_id) => <CoffeeCard key={_id} coffee={coffee} coffees={coffees} setCoffees={setCoffees}></CoffeeCard>)
                         }
                         
                     </div>
