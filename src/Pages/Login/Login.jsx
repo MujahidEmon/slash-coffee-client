@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 const Login = () => {
   return (
     <div className="bg-[url('https://i.ibb.co.com/6bMvLDn/11.png')]  bg-cover bg-center">
-        <div className="lg:max-w-7xl max-w-lg mt-17 rounded-xl  bg-[#F4F3F0]  items-center md:flex-row flex-col flex mx-auto">
+        <div className="lg:max-w-7xl max-w-lg mt-17 rounded-xl py-6 bg-[#F4F3F0]  items-center md:flex-row flex-col flex mx-auto">
             <div className="lg:w-1/2 w-full flex items-center justify-center">
-                <img className="lg:h-96 h-40 ml-0 lg:ml-16" src="/src/assets/images/more/2.png" alt="" />
+                <img className="lg:h-96 md:flex hidden h-40 ml-0 lg:ml-16 rounded-xl " src="/src/assets/images/more/6.png" alt="" />
             </div>
             <div className="flex lg:w-2/3 w-full rounded-xl lg:max-w-xl  mx-auto  font-raleway justify-center ">
                 <form
@@ -21,7 +21,7 @@ const Login = () => {
                 </div>
                 <div className="">
                     <div>
-                    <label className="text-gray-800 text-sm block font-bold mt-4">
+                    <label className="text-gray-800 font-rancho text-2xl block font-bold mt-4">
                         Email
                     </label>
                     <div className="relative flex items-center">
@@ -71,7 +71,7 @@ const Login = () => {
                     </div>
 
                     <div className="mt-4">
-                    <label className="text-gray-800 text-sm block font-bold ">
+                    <label className="text-gray-800 font-rancho text-2xl block font-bold ">
                         Password
                     </label>
                     <div className="relative flex items-center">
