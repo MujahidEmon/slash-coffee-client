@@ -1,57 +1,58 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Root from './Routes/Root/Root.jsx'
-import Home from './Pages/Home/Home.jsx'
-import ErrorPage from './Pages/ErrorPage/ErrorPage.jsx'
-import AddCoffeePage from './Pages/AddCoffeePage/AddCoffeePage.jsx'
-import UpdatePage from './Pages/UpdatePage/UpdatePage.jsx'
-import CoffeeDetailsPage from './Pages/CoffeeDetailsPage/CoffeeDetailsPage.jsx'
-import Login from './Pages/Login/Login.jsx'
-import Register from './Pages/Register/Register.jsx'
-
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App.jsx";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Root from "./Routes/Root/Root.jsx";
+import Home from "./Pages/Home/Home.jsx";
+import ErrorPage from "./Pages/ErrorPage/ErrorPage.jsx";
+import AddCoffeePage from "./Pages/AddCoffeePage/AddCoffeePage.jsx";
+import UpdatePage from "./Pages/UpdatePage/UpdatePage.jsx";
+import CoffeeDetailsPage from "./Pages/CoffeeDetailsPage/CoffeeDetailsPage.jsx";
+import Login from "./Pages/Login/Login.jsx";
+import Register from "./Pages/Register/Register.jsx";
+import AuthProvider from "./Provider/AuthProvider.jsx";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <Root></Root>,
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
-        path: '/',
+        path: "/",
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/coffees')
+        loader: () => fetch("http://localhost:5000/coffees"),
       },
       {
-        path: '/addCoffee',
-        element: <AddCoffeePage></AddCoffeePage>
+        path: "/addCoffee",
+        element: <AddCoffeePage></AddCoffeePage>,
       },
       {
-        path: '/updateCoffee/:id',
+        path: "/updateCoffee/:id",
         element: <UpdatePage></UpdatePage>,
-        loader: ({params}) => fetch(`http://localhost:5000/coffees/${params.id}`)
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/coffees/${params.id}`),
       },
       {
-        path: '/coffeeDetails',
-        element: <CoffeeDetailsPage></CoffeeDetailsPage>
+        path: "/coffeeDetails",
+        element: <CoffeeDetailsPage></CoffeeDetailsPage>,
       },
       {
-        path: '/login',
-        element: <Login></Login>
+        path: "/login",
+        element: <Login></Login>,
       },
       {
-        path: '/register',
-        element: <Register></Register>
-      }
-    ]
-  }
-])
-createRoot(document.getElementById('root')).render(
+        path: "/register",
+        element: <Register></Register>,
+      },
+    ],
+  },
+]);
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router}>
-
-    </RouterProvider>
-  </StrictMode>,
-)
+    <AuthProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </AuthProvider>
+  </StrictMode>
+);
