@@ -1,6 +1,41 @@
+import { useContext, useState } from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 const Register = () => {
+    const {signUp} = useContext(AuthContext)
+    const [showPass, setShowPass] = useState(false)
+    const handleRegister = e => {
+        e.preventDefault();
+        const form = new FormData(e.currentTarget)
+        const name = form.get('name');
+        const photo = form.get('photo');
+        const email = form.get('email');
+        const password = form.get('password');
+        console.log(name, photo, email, password);
+        
+        signUp(email, password)
+        .then(res => {
+            console.log(res.user);
+            const createdAt = res?.user.metadata.createdAt
+            const user = {email, createdAt: createdAt}
+            fetch('http://localhost:5000/users', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(user)
+            })
+            .then(res => res.json())
+            .then(data => console.log(data))
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
+
+
+
     return (
         <div className="bg-[url('https://i.ibb.co.com/6bMvLDn/11.png')]  bg-cover bg-center">
         <div className="lg:max-w-7xl max-w-lg mt-17 rounded-xl py-6 bg-[#F4F3F0]  items-center md:flex-row flex-col flex mx-auto">
@@ -9,7 +44,7 @@ const Register = () => {
             </div>
             <div className="flex lg:w-2/3 w-full rounded-xl lg:max-w-xl  mx-auto  font-raleway justify-center ">
                 <form
-                // onSubmit={handleLogin}
+                onSubmit={handleRegister}
                 // onSubmit={handleSubmit(onSubmit)}
                 className="max-w-lg w-full px-6 py-8 mx-auto"
                 >
@@ -27,7 +62,7 @@ const Register = () => {
                         <input
                         name="name"
                         type="text"
-                        // required
+                        required
                         className="w-full text-sm text-gray-800 border-b border-gray-300 focus:border-blue-600 px-2 py-3 outline-none"
                         placeholder="Enter Your Name"
                         // {...register("email", { required: true })}
@@ -123,9 +158,9 @@ const Register = () => {
                     </label>
                     <div className="relative flex items-center">
                         <input
-                        // name="email"
-                        // type="email"
-                        // required
+                        name="email"
+                        type="email"
+                        required
                         className="w-full text-sm text-gray-800 border-b border-gray-300 focus:border-blue-600 px-2 py-3 outline-none"
                         placeholder="Enter email"
                         // {...register("email", { required: true })}
@@ -173,8 +208,8 @@ const Register = () => {
                     </label>
                     <div className="relative flex items-center">
                         <input
-                        // name="password"
-                        // type={showPass ? "text" : "password"}
+                        name="password"
+                        type={showPass ? "text" : "password"}
                         required
                         className="w-full text-sm text-gray-800 border-b border-gray-300 focus:border-blue-600 px-2 py-3 outline-none"
                         placeholder="Enter password"
@@ -195,7 +230,7 @@ const Register = () => {
                         // })}
                         />
                         <svg
-                        // onClick={() => setShowPass(!showPass)}
+                        onClick={() => setShowPass(!showPass)}
                         xmlns="http://www.w3.org/2000/svg"
                         fill="#bbb"
                         stroke="#bbb"

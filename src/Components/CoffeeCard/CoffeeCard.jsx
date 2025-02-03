@@ -1,6 +1,4 @@
-import { FaEdit, FaEye } from "react-icons/fa";
-import { FaDeleteLeft } from "react-icons/fa6";
-import { FiDelete } from "react-icons/fi";
+
 import { IoEye } from "react-icons/io5";
 import { MdDelete, MdEdit } from "react-icons/md";
 import { data, Link } from "react-router-dom";
