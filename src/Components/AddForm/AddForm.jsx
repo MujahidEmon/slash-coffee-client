@@ -1,7 +1,11 @@
+import { useContext } from 'react';
 import Swal from 'sweetalert2'
+import { AuthContext } from '../../Provider/AuthProvider';
 const AddForm = () => {
-
+  const {user} = useContext(AuthContext);
+  
   const handleAddCoffee = e => {
+    console.log(user.email)
     e.preventDefault();
 
     const form = new FormData(e.currentTarget);
@@ -14,7 +18,7 @@ const AddForm = () => {
     const details = form.get('details')
     const photo = form.get('photo')
 
-    const newCoffee = {name, chef, supplier, taste, category, details, photo}
+    const newCoffee = {name, chef, supplier, taste, category, details, photo, addedBy:user.email}
     console.log(newCoffee);
 
 
@@ -30,7 +34,7 @@ const AddForm = () => {
     .then(data => {
       console.log(data);
       Swal.fire({
-        title: 'User Added Successfully',
+        title: 'Coffee Added to The Menu',
         // text: 'Do you want to continue',
         icon: 'success',
         confirmButtonText: 'Back'

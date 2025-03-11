@@ -1,7 +1,29 @@
+import { useContext, useState } from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
+    const [showPass, setShowPass] = useState(false)
+    const {login} = useContext(AuthContext)
+    const navigate = useNavigate();
+
+    const handleLogin = e => {
+        e.preventDefault();
+        const form = new FormData(e.currentTarget)
+        const email = form.get('email');
+        const password = form.get('password');
+
+        login(email, password)
+        .then(res => {
+            console.log(res.user)
+            navigate('/')
+        })
+        .catch(error => {
+            console.log(error);
+        })
+
+    }
   return (
     <div className="bg-[url('https://i.ibb.co.com/6bMvLDn/11.png')]  bg-cover bg-center">
         <div className="lg:max-w-7xl max-w-lg mt-17 rounded-xl py-6 bg-[#F4F3F0]  items-center md:flex-row flex-col flex mx-auto">
@@ -10,7 +32,7 @@ const Login = () => {
             </div>
             <div className="flex lg:w-2/3 w-full rounded-xl lg:max-w-xl  mx-auto  font-raleway justify-center ">
                 <form
-                // onSubmit={handleLogin}
+                onSubmit={handleLogin}
                 // onSubmit={handleSubmit(onSubmit)}
                 className="max-w-lg w-full px-6 py-8 mx-auto"
                 >
@@ -26,8 +48,8 @@ const Login = () => {
                     </label>
                     <div className="relative flex items-center">
                         <input
-                        // name="email"
-                        // type="email"
+                        name="email"
+                        type="email"
                         // required
                         className="w-full text-sm text-gray-800 border-b border-gray-300 focus:border-blue-600 px-2 py-3 outline-none"
                         placeholder="Enter email"
@@ -76,8 +98,8 @@ const Login = () => {
                     </label>
                     <div className="relative flex items-center">
                         <input
-                        // name="password"
-                        // type={showPass ? "text" : "password"}
+                        name="password"
+                        type={showPass ? "text" : "password"}
                         required
                         className="w-full text-sm text-gray-800 border-b border-gray-300 focus:border-blue-600 px-2 py-3 outline-none"
                         placeholder="Enter password"
@@ -98,7 +120,7 @@ const Login = () => {
                         // })}
                         />
                         <svg
-                        // onClick={() => setShowPass(!showPass)}
+                        onClick={() => setShowPass(!showPass)}
                         xmlns="http://www.w3.org/2000/svg"
                         fill="#bbb"
                         stroke="#bbb"
