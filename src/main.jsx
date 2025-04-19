@@ -14,6 +14,7 @@ import Register from "./Pages/Register/Register.jsx";
 import AuthProvider from "./Provider/AuthProvider.jsx";
 import PrivateRoutes from "./Routes/PrivateRoutes.jsx";
 import MyCart from "./Pages/MyCart/MyCart.jsx";
+import Manage from "./Pages/Manage/Manage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,12 @@ const router = createBrowserRouter([
       {
         path:'/MyCart',
         element:<MyCart></MyCart>
+      },
+      {
+        path: '/manage',
+        element: <PrivateRoutes><Manage></Manage></PrivateRoutes>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/coffees`)
       }
     ],
   },

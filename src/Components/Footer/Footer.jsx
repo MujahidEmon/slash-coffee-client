@@ -7,6 +7,7 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import { FaMapLocation } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -78,6 +79,7 @@ const Footer = () => {
               <button className="btn   w-fit btn-outline rounded-4xl font-rancho text-xl btn-secondary">
                 Send Message
               </button>
+              <Link className="font-raleway cursor-pointer btn  btn-accent" to={'/manage'}>Manage</Link>
             </div>
           </div>
         </div>
