@@ -1,14 +1,52 @@
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
-const TableRow = () => {
+const TableRow = ({order}) => {
+
+    const {orders, setOrders} = useContext(AuthContext)
+
+    const handleDelete = _id => {
+            console.log(_id);
+    
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!"
+              }).then((result) => {
+                if (result.isConfirmed) {
+                    fetch(`http://localhost:5000/orders/${_id}`,{
+                        method: 'DELETE'
+                    })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if(data.deletedCount>0){
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                            });
+                            const remaining = orders.filter(o => o._id !== _id)
+                            setOrders(remaining)
+                        }
+                    })
+                }
+              });
+        }
     return (
             <tr className="even:bg-blue-50">
-            <td className="p-4 text-[15px] text-slate-900 font-medium">John Doe</td>
+            <td className="p-4 text-[15px] text-slate-900 font-medium">{order.name}</td>
             <td className="p-4 text-[15px] text-slate-600 font-medium">
-              john@example.com
+              {order.email}
             </td>
             <td className="p-4 text-[15px] text-slate-600 font-medium">Admin</td>
             <td className="p-4 text-[15px] text-slate-600 font-medium">
-              2022-05-15
+              {order.grandTotal}
             </td>
             <td className="p-4">
               <div className="flex items-center">
@@ -28,7 +66,7 @@ const TableRow = () => {
                     />
                   </svg>
                 </button>
-                <button title="Delete">
+                <button onClick={() =>handleDelete(order._id)} title="Delete">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="w-5 h-5 fill-red-500 hover:fill-red-700"

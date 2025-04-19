@@ -9,7 +9,7 @@ import ManageProducts from "./ManageProducts";
 const ManageOrders = () => {
     const [activeTab, setActiveTab] = useState("home");
     const orders = useLoaderData()
-    console.log(orders);
+    
   return (
     <div className="p-4">
       <ul className="flex">
@@ -49,7 +49,7 @@ const ManageOrders = () => {
       </ul>
 
       {/* Home Content */}
-      {activeTab === "home" &&<PendingOrders></PendingOrders>}
+      {activeTab === "home" &&<PendingOrders orders={orders}></PendingOrders>}
 
       {/* Content Content */}
       {activeTab === "content" && <ConfirmedOrders></ConfirmedOrders>}

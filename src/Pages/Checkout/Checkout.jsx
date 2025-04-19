@@ -27,7 +27,7 @@ const Checkout = () => {
             
             console.log(name, email, phone, address, note);
             
-            const newOrder = {name, email, phone, address, note, grandTotal, totalPrice, cartCoffees }
+            const newOrder = {name, email, phone, address, note, grandTotal, totalPrice, cartCoffees, status:'pending' }
             console.log(newOrder);
             fetch('http://localhost:5000/orders', {
                 method: 'POST',

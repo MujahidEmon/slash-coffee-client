@@ -1,7 +1,8 @@
 import React from "react";
 import TableRow from "../../Components/TableRow/TableRow";
 
-const PendingOrders = () => {
+const PendingOrders = ({orders}) => {
+    console.log(orders);
   return (
     <div className="overflow-x-auto ">
       <table className="min-w-full bg-white">
@@ -26,9 +27,9 @@ const PendingOrders = () => {
         </thead>
 
         <tbody className="whitespace-nowrap">
-          <TableRow></TableRow>
-          <TableRow></TableRow>
-          <TableRow></TableRow>
+          {
+            orders.map((order, idx) => <TableRow key={idx} order={order}></TableRow>)
+        }
         </tbody>
       </table>
     </div>
