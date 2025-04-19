@@ -1,12 +1,13 @@
 import { useContext, useState } from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
     const [showPass, setShowPass] = useState(false)
-    const {login} = useContext(AuthContext)
+    const {login, googleLogin , gitHubLogin} = useContext(AuthContext)
     const navigate = useNavigate();
+    const location = useLocation()
 
     const handleLogin = e => {
         e.preventDefault();
@@ -23,6 +24,31 @@ const Login = () => {
             console.log(error);
         })
 
+    }
+
+    const handleGoogleLogin = () => {
+        googleLogin()
+        .then(result => {
+            console.log(result.user);
+            navigate('/')
+        })
+        .catch(error => {
+            console.error(error);
+            
+        })
+    }
+
+    const handleGitHubLogin = () => {
+        gitHubLogin()
+        .then(res => {
+            console.log(res.user);
+            navigate('/')
+            
+        })
+        .catch(error => {
+            console.error(error);
+            
+        })
     }
   return (
     <div className="bg-[url('https://i.ibb.co.com/6bMvLDn/11.png')]  bg-cover bg-center">
@@ -180,13 +206,13 @@ const Login = () => {
 
                 <div className=" flex items-center gap-6 justify-center">
                     <button
-                    //   onClick={handleGoogleLogin}
+                      onClick={handleGoogleLogin}
                     className="btn btn-circle"
                     >
                     <FaGoogle size={30}></FaGoogle>
                     </button>
                     <button
-                    //   onClick={handleGitHubLogin}
+                      onClick={handleGitHubLogin}
                     className="btn btn-circle"
                     >
                     <FaGithub size={30}></FaGithub>

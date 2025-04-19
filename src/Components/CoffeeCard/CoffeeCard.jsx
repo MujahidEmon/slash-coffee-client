@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 
 
 const CoffeeCard = ({coffee, coffees , setCoffees}) => {
-    const {name, chef, category, photo, taste, supplier, _id, details} = coffee;
+    const {name, chef, category, photo, price, taste, supplier, _id, details} = coffee;
 
     const handleDelete = _id => {
         console.log(_id);
@@ -48,6 +48,7 @@ const CoffeeCard = ({coffee, coffees , setCoffees}) => {
                     <p><span className="font-bold">Name: </span>{name}</p>
                     <p><span className="font-bold">Chef: </span>{chef}</p>
                     <p><span className="font-bold">Supplier: </span>{supplier}</p>
+                    <p><span className="font-bold">Price: </span>{price}</p>
                 </div>
                 <div className="flex flex-col justify-center gap-4 items-center">
                     <Link to={'/coffeeDetails'} className="bg-amber-100 btn"><IoEye size={25}></IoEye></Link>

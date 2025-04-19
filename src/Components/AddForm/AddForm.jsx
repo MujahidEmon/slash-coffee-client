@@ -16,9 +16,10 @@ const AddForm = () => {
     const taste = form.get('taste')
     const category = form.get('category')
     const details = form.get('details')
+    const price = form.get('price')
     const photo = form.get('photo')
 
-    const newCoffee = {name, chef, supplier, taste, category, details, photo, addedBy:user.email}
+    const newCoffee = {name, chef, supplier, taste, category, details, photo, price, addedBy:user.email}
     console.log(newCoffee);
 
 
@@ -103,6 +104,17 @@ const AddForm = () => {
             </label>
             <input
               name="details"
+              type="text"
+              className="w-full text-gray-800 text-sm px-4 py-3 rounded input bg-white "
+              placeholder="In Brief"
+            />
+          </div>
+          <div>
+            <label className="text-gray-600 text-sm mb-2 block font-bold">
+              Price
+            </label>
+            <input
+              name="price"
               type="text"
               className="w-full text-gray-800 text-sm px-4 py-3 rounded input bg-white "
               placeholder="In Brief"

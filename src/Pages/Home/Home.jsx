@@ -5,6 +5,7 @@ import { FaCoffee } from "react-icons/fa";
 import Footer from "../../Components/Footer/Footer";
 import CoffeeCard from "../../Components/CoffeeCard/CoffeeCard";
 import { useState } from "react";
+import ClientCoffeeCard from "../../Components/ClientCoffeeCard/ClientCoffeeCard";
 
 
 const Home = () => {
@@ -30,7 +31,7 @@ const Home = () => {
                     <div className=" mx-auto w-fit grid grid-flow-row lg:grid-cols-2 justify-center items-center gap-9 ">
 
                         {
-                            coffees.map((coffee,_id) => <CoffeeCard key={_id} coffee={coffee} coffees={coffees} setCoffees={setCoffees}></CoffeeCard>)
+                            coffees.map((coffee,_id) => <ClientCoffeeCard key={_id} coffee={coffee} coffees={coffees} setCoffees={setCoffees}></ClientCoffeeCard>)
                         }
                         
                     </div>

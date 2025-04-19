@@ -13,6 +13,7 @@ import Login from "./Pages/Login/Login.jsx";
 import Register from "./Pages/Register/Register.jsx";
 import AuthProvider from "./Provider/AuthProvider.jsx";
 import PrivateRoutes from "./Routes/PrivateRoutes.jsx";
+import MyCart from "./Pages/MyCart/MyCart.jsx";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register></Register>,
       },
+      {
+        path:'/MyCart',
+        element:<MyCart></MyCart>
+      }
     ],
   },
 ]);
