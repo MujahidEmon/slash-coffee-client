@@ -14,6 +14,7 @@ const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(false)
     const [cartCoffees, setCartCoffees] = useState([]);
+    const [Coffees, setCoffees] = useState([])
 
     const login = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password)
@@ -46,6 +47,13 @@ const AuthProvider = ({children}) => {
     const products = getCartCoffees();
     setCartCoffees(products);
   }, []);
+  useEffect(() => {
+        fetch(`http://localhost:5000/coffees`)
+        .then(res => res.json())
+        .then(data => {
+            setCoffees(data)
+        })
+  }, []);
 
 
 // function for add to cart and stored in local storage
@@ -68,7 +76,7 @@ const AuthProvider = ({children}) => {
 // function to find the total bill from the cart products
 const totalPrice = cartCoffees.reduce((sum, item) => sum + Number(item.price), 0);
 //   console.log("total: ",totalPrice);
-  const grandTotal = totalPrice + 120;
+  const grandTotal = totalPrice + 50;
 
     const authInfo = {
         user,
@@ -82,8 +90,8 @@ const totalPrice = cartCoffees.reduce((sum, item) => sum + Number(item.price), 0
         handleRemoveFromCart,
         totalPrice,
         grandTotal,
-        cartCoffees
-
+        cartCoffees,
+        Coffees
     }
 
     useEffect(() => {

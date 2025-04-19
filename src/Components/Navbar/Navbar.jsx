@@ -6,7 +6,7 @@ import { CgShoppingCart } from "react-icons/cg";
 
 const Navbar = () => {
   const { user, cartCoffees, totalPrice } = useContext(AuthContext);
-  console.log(user);
+//   console.log(user);
   return (
     <div className="navbar bg-[url('https://i.ibb.co.com/Ws9RY1T/15.jpg')]">
       <div className="flex-1">

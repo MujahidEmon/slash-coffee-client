@@ -28,7 +28,7 @@ const MyCart = () => {
                 <span className="ml-auto font-semibold">{totalPrice}</span>
                 </li>
                 <li className="flex flex-wrap gap-4 text-sm">
-                Shipping <span className="ml-auto font-semibold">BDT 120</span>
+                Shipping <span className="ml-auto font-semibold">BDT 50</span>
                 </li>
 
                 <hr className="border-slate-300" />
@@ -42,7 +42,7 @@ const MyCart = () => {
                 type="button"
                 className="text-sm px-4 py-2.5 w-full font-semibold tracking-wide bg-slate-800 hover:bg-slate-900 text-white rounded-md"
                 >
-                Buy Now
+               <Link to={'/checkout'}> Buy Now</Link>
                 </button>
                 <button
                 type="button"

@@ -14,7 +14,10 @@ import Register from "./Pages/Register/Register.jsx";
 import AuthProvider from "./Provider/AuthProvider.jsx";
 import PrivateRoutes from "./Routes/PrivateRoutes.jsx";
 import MyCart from "./Pages/MyCart/MyCart.jsx";
-import Manage from "./Pages/Manage/Manage.jsx";
+import Manage from "./Pages/Manage/ManageOrders.jsx";
+import ManageOrders from "./Pages/Manage/ManageOrders.jsx";
+import Checkout from "./Pages/Checkout/Checkout.jsx";
+import { Toaster } from "react-hot-toast";
 
 const router = createBrowserRouter([
   {
@@ -55,9 +58,13 @@ const router = createBrowserRouter([
       },
       {
         path: '/manage',
-        element: <PrivateRoutes><Manage></Manage></PrivateRoutes>,
-        loader: ({ params }) =>
-          fetch(`http://localhost:5000/coffees`)
+        element: <PrivateRoutes><ManageOrders></ManageOrders></PrivateRoutes>,
+        loader: ({params})=> fetch('http://localhost:5000/orders')
+        
+      },
+      {
+        path: '/checkout',
+        element: <Checkout></Checkout>
       }
     ],
   },
@@ -66,6 +73,7 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AuthProvider>
       <RouterProvider router={router}></RouterProvider>
+      <Toaster></Toaster>
     </AuthProvider>
   </StrictMode>
 );
