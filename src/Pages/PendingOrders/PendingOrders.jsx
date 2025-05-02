@@ -1,8 +1,8 @@
 import React from "react";
 import TableRow from "../../Components/TableRow/TableRow";
 
-const PendingOrders = ({orders}) => {
-    console.log(orders);
+const PendingOrders = () => {
+    // console.log(orders);
   return (
     <div className="overflow-x-auto ">
       <table className="min-w-full bg-white">
@@ -12,13 +12,16 @@ const PendingOrders = ({orders}) => {
               Name
             </th>
             <th className="p-4 text-left text-sm font-medium text-white">
-              Email
+              Table Number
             </th>
             <th className="p-4 text-left text-sm font-medium text-white">
-              Role
+              Contact No.
             </th>
             <th className="p-4 text-left text-sm font-medium text-white">
-              Joined At
+              Order Status
+            </th>
+            <th className="p-4 text-left text-sm font-medium text-white">
+              Price
             </th>
             <th className="p-4 text-left text-sm font-medium text-white">
               Actions
@@ -27,9 +30,9 @@ const PendingOrders = ({orders}) => {
         </thead>
 
         <tbody className="whitespace-nowrap">
-          {
+          {/* {
             orders.map((order, idx) => <TableRow key={idx} order={order}></TableRow>)
-        }
+        } */}
         </tbody>
       </table>
     </div>

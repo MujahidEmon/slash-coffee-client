@@ -44,7 +44,10 @@ const TableRow = ({order}) => {
             <td className="p-4 text-[15px] text-slate-600 font-medium">
               {order.email}
             </td>
-            <td className="p-4 text-[15px] text-slate-600 font-medium">Admin</td>
+            <td className="p-4 text-[15px] text-slate-600 font-medium">
+              {order.phone}
+            </td>
+            <td className="p-4 text-[15px] text-slate-600 font-medium">{order.status}</td>
             <td className="p-4 text-[15px] text-slate-600 font-medium">
               {order.grandTotal}
             </td>

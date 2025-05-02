@@ -21,13 +21,13 @@ const Checkout = () => {
 
             const name = form.get('name')
             const phone = form.get('phone')
-            const email = form.get('email')
-            const address = form.get('address')
+            // const email = form.get('email')
+            const tableNumber = form.get('tableNumber')
             const note = form.get('note')
             
-            console.log(name, email, phone, address, note);
+            console.log(name,  phone, tableNumber, note);
             
-            const newOrder = {name, email, phone, address, note, grandTotal, totalPrice, cartCoffees, status:'pending' }
+            const newOrder = {name, phone, tableNumber, note, grandTotal, totalPrice, cartCoffees, status:'pending' }
             console.log(newOrder);
             fetch('http://localhost:5000/orders', {
                 method: 'POST',
@@ -83,7 +83,7 @@ const Checkout = () => {
                       />
                     </div>
   
-                    <div>
+                    {/* <div>
                       <label
                         htmlFor="your_email"
                         className="mb-2 block text-sm font-medium text-gray-900"
@@ -98,7 +98,7 @@ const Checkout = () => {
                         placeholder="name@flowbite.com"
                         required
                       />
-                    </div>
+                    </div> */}
   
                     <div>
                       <label
@@ -127,14 +127,14 @@ const Checkout = () => {
                         htmlFor="full_address"
                         className="mb-2 block text-sm font-medium text-gray-900"
                       >
-                        Full Address
+                        Table Number
                       </label>
                       <input
                         type="text"
                         id="full-address"
-                        name="address"
+                        name="tableNumber"
                         className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
-                        placeholder="Enter Your Full Address"
+                        placeholder="Enter Table Number"
                         required
                       />
                     </div>

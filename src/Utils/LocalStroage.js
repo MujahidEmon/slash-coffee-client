@@ -16,11 +16,11 @@ export const getCartCoffees = () => {
 export const saveToCart = (product) => {
     let cartCoffees = getCartCoffees();
 
-    const isExist = cartCoffees.find(p => p._id ===product._id)
+    // const isExist = cartCoffees.find(p => p._id ===product._id)
 
-    if(isExist){
-        return toast.error('already added to cart')
-    }
+    // if(isExist){
+    //     return toast.error('already added to cart')
+    // }
 
     cartCoffees.push(product)
 

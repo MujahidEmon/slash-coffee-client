@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
-import { FaCartPlus } from "react-icons/fa";
 import { CgShoppingCart } from "react-icons/cg";
 
 const Navbar = () => {
@@ -34,7 +33,7 @@ const Navbar = () => {
               <Link to={"/"}>Home</Link>
             </li>
             <li>
-              <Link to={"/allProducts"}>All Products</Link>
+              <Link to={"/coffees"}>All Products</Link>
             </li>
             <li>
               <Link>Contact Us</Link>

@@ -2,6 +2,6 @@
 @import "tailwindcss";
 @plugin "daisyui";
 @theme {
-    --font-rancho: "Rancho", serif;
+    /* --font-rancho: "Rancho", serif; */
     --font-raleway: "Raleway", serif;
 }

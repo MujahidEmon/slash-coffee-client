@@ -1,13 +1,16 @@
 
+import { useContext } from "react";
 import { IoEye } from "react-icons/io5";
 import { MdDelete, MdEdit } from "react-icons/md";
 import { data, Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 
-const CoffeeCard = ({coffee, coffees , setCoffees}) => {
+const CoffeeCard = ({coffee}) => {
     const {name, chef, category, photo, price, taste, supplier, _id, details} = coffee;
 
+    const{Coffees, setCoffees} = useContext(AuthContext)
     const handleDelete = _id => {
         console.log(_id);
 
@@ -33,7 +36,7 @@ const CoffeeCard = ({coffee, coffees , setCoffees}) => {
                             text: "Your file has been deleted.",
                             icon: "success"
                         });
-                        const remaining = coffees.filter(c => c._id !== _id)
+                        const remaining = Coffees.filter(c => c._id !== _id)
                         setCoffees(remaining)
                     }
                 })

@@ -19,9 +19,7 @@ const ConfirmedOrders = () => {
         </thead>
 
         <tbody className="whitespace-nowrap">
-          <TableRow></TableRow>
-          <TableRow></TableRow>
-          <TableRow></TableRow>
+          
         </tbody>
       </table>
     </div>

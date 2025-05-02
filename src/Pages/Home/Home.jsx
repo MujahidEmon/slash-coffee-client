@@ -23,12 +23,12 @@ const Home = () => {
                 <div className="flex flex-col items-center justify-center gap-3 my-14">
                     <p>--- Sip & Savor ---</p>
                     <h1 className="font-rancho text-3xl stroke-black lg:text-6xl drop-shadow-2xl">Our Products</h1>
-                    <Link  className="flex justify-center"><button className="flex gap-1 items-center font-rancho btn shadow-none border-0 text-white text-xl bg-[#E3B577]">Show All <FaCoffee></FaCoffee></button></Link>
+                    <Link to={'/coffees'} className="flex justify-center"><button className="flex gap-1 items-center font-rancho btn shadow-none border-0 text-white text-xl bg-[#E3B577]">Show All <FaCoffee></FaCoffee></button></Link>
                 </div>
 
                 <div className=" lg:max-w-7xl mx-auto ">
 
-                    <div className=" mx-auto w-fit grid grid-flow-row lg:grid-cols-2 justify-center items-center gap-9 ">
+                    <div className=" mx-auto w-fit grid grid-flow-row md:grid-cols-2 justify-center items-center gap-9 ">
 
                         {
                             coffees.map((coffee,_id) => <ClientCoffeeCard key={_id} coffee={coffee} coffees={coffees} setCoffees={setCoffees}></ClientCoffeeCard>)

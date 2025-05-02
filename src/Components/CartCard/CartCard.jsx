@@ -17,8 +17,11 @@ const CartCard = ({coffee}) => {
             </h3>
             
           </div>
+            <h3 className="text-sm sm:text-base mt-auto font-semibold text-slate-900">
+              Category: {coffee.category}
+            </h3>
 
-          <div className="mt-auto flex items-center gap-3">
+          {/* <div className="mt-auto flex items-center gap-3">
             <button
               type="button"
               className="flex items-center justify-center w-5 h-5 bg-slate-400 outline-none rounded-full"
@@ -50,7 +53,7 @@ const CartCard = ({coffee}) => {
                 ></path>
               </svg>
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="ml-auto flex flex-col">
@@ -75,7 +78,7 @@ const CartCard = ({coffee}) => {
           </button>
         </div>
         <h3 className="text-sm sm:text-base font-semibold text-slate-900 mt-auto">
-          {coffee.price}
+          Price: BDT {coffee.price}
         </h3>
       </div>
     </div>
