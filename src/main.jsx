@@ -24,6 +24,8 @@ import OrderDetail from "./Pages/OrderDetail/OrderDetail.jsx";
 import CookingOrders from "./Pages/CookingOrders/CookingOrders.jsx";
 import ReadyToServe from "./Pages/ReadyToServe/ReadyToServe.jsx";
 import Delivered from "./Pages/Delivered/Delivered.jsx";
+import SupportTickets from "./Pages/SupportTickets/SupportTickets.jsx";
+import SupportDetail from "./Pages/SupportTickets/SupportDetail.jsx";
 
 const router = createBrowserRouter([
   {
@@ -105,7 +107,17 @@ const router = createBrowserRouter([
         element:<OrderDetail></OrderDetail>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/orders/${params.id}`),
-      }
+      },
+      {
+        path:'/supports',
+        element: <SupportTickets></SupportTickets>
+      },
+      {
+        path: "/complains/:id",
+        element:<SupportDetail></SupportDetail>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/complains/${params.id}`),
+      },
     ],
   },
 ]);

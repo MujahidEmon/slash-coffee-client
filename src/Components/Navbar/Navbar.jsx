@@ -4,8 +4,13 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { CgShoppingCart } from "react-icons/cg";
 
 const Navbar = () => {
-  const { user, cartCoffees, totalPrice } = useContext(AuthContext);
-//   console.log(user);
+  const { user, cartCoffees, totalPrice, logOut } = useContext(AuthContext);
+  
+    const handleLogout = () => {
+    logOut()
+    .then(result => console.log(result.user))
+    .catch
+    }
   return (
     <div className="navbar bg-[url('https://i.ibb.co.com/Ws9RY1T/15.jpg')]">
       <div className="flex-1">
@@ -81,9 +86,9 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-fit p-2 shadow"
           >
-            <li>
+            {/* <li>
               <a className="justify-between">
                 Profile
                 <span className="badge">New</span>
@@ -91,13 +96,11 @@ const Navbar = () => {
             </li>
             <li>
               <a>Settings</a>
-            </li>
+            </li> */}
             <li>
-              {user ? (
-                <button>Logout</button>
-              ) : (
-                <Link to={"/login"}>Login</Link>
-              )}
+              {user ? <Link onClick={handleLogout} className="btn bg-[#E3B577] w-fit shadow-none border-0 font-rancho text-white text-sm">Logout</Link> :
+                <Link to={'/login'} className="btn bg-[#E3B577] w-fit shadow-none border-0 font-raleway text-white text-sm">Login</Link>
+              }
             </li>
           </ul>
         </div>

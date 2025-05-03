@@ -61,6 +61,16 @@ const ManageOrders = () => {
         >
           Manage Products
         </NavLink>
+        <NavLink
+          to={'/supports'}
+          id="homeTab"
+
+          className={({ isActive }) =>
+            isActive ? "bg-[url('https://i.ibb.co.com/Ws9RY1T/15.jpg')] text-white  font-semibold text-[15px] rounded-t-2xl text-center py-3 px-6 border-b-2 cursor-pointer transition-all" : "font-semibold text-[15px] rounded-t-2xl text-center py-3 px-6 border-b-2 cursor-pointer transition-all text-slate-600 hover:bg-gray-50 border-transparent"
+          }
+        >
+          Support Tickets
+        </NavLink>
       </ul>
 
 

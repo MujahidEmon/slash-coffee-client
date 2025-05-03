@@ -1,8 +1,8 @@
 import TableRow from "../../Components/TableRow/TableRow";
 
 const ConfirmedOrders = () => {
-    return (
-        <div className="overflow-x-auto">
+  return (
+    <div className="overflow-x-auto">
       <table className="min-w-full bg-white">
         <thead className="bg-[url('https://i.ibb.co.com/Ws9RY1T/15.jpg')] whitespace-nowrap">
           <tr>
@@ -19,11 +19,11 @@ const ConfirmedOrders = () => {
         </thead>
 
         <tbody className="whitespace-nowrap">
-          
+
         </tbody>
       </table>
     </div>
-    );
+  );
 };
 
 export default ConfirmedOrders;

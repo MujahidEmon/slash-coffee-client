@@ -1,8 +1,9 @@
 import { GiConfirmed } from "react-icons/gi";
 import { TiArrowBackOutline } from "react-icons/ti";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 
 const OrderDetail = () => {
+    const navigate = useNavigate();
     const order = useLoaderData();
 
     const handleUpdateOrder = e => {
@@ -47,7 +48,7 @@ const OrderDetail = () => {
         <div className="bg-[url('https://i.ibb.co.com/fNtQhMV/1.png')] bg-cover bg-center">
 
             <div className="lg:max-w-7xl   mx-auto max-w-sm">
-                <Link to={'/'} className="flex items-center flex-row my-8 hover:cursor-pointer"><TiArrowBackOutline size={35} /><button className="font-rancho text-center text-3xl cursor-pointer">Back to Home</button></Link>
+                <button onClick={() => navigate(-1)} to={'/'} className="flex items-center flex-row my-8 hover:cursor-pointer"><TiArrowBackOutline size={35} /><button className="font-rancho text-center text-3xl cursor-pointer">Back</button></button>
                 <form onSubmit={handleUpdateOrder} className="max-w-4xl mx-auto">
                     <h1 className="font-semibold text-3xl text-center mb-6">Order for: {order.name}</h1>
                     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">

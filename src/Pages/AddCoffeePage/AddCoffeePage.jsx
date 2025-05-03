@@ -1,13 +1,14 @@
 import { TiArrowBackOutline } from "react-icons/ti";
 import AddForm from "../../Components/AddForm/AddForm";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 const AddCoffeePage = () => {
+    const navigate = useNavigate();
     return (
         <div className="bg-[url('https://i.ibb.co.com/6bMvLDn/11.png')]">
             <div className="lg:max-w-7xl  mx-auto max-w-sm  ">
-                <Link to={'/'} className="flex items-center flex-row my-8 hover:cursor-pointer"><TiArrowBackOutline size={35} /><button className="font-rancho text-center text-3xl cursor-pointer">Back to Home</button></Link>
+                <button onClick={() => navigate(-1)} to={'/'} className="flex items-center flex-row my-8 hover:cursor-pointer"><TiArrowBackOutline size={35} /><button className="font-rancho text-center text-3xl cursor-pointer">Back</button></button>
                 <div className=" bg-[#F4F3F0] rounded-lg lg:px-16 px-7 lg:py-18">
                     <div className="text-center ">
                         <h2 className="font-rancho text-4xl">Add New Coffee</h2>

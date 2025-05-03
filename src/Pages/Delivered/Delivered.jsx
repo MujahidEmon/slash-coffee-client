@@ -59,15 +59,6 @@ const Delivered = () => {
 
   return (
     <div className="overflow-x-auto p-4">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-bold">Delivered Orders</h2>
-        <button
-          onClick={fetchOrders}
-          className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg"
-        >
-          Refresh
-        </button>
-      </div>
       <table className="min-w-full bg-white">
         <thead className="bg-[url('https://i.ibb.co.com/Ws9RY1T/15.jpg')] whitespace-nowrap">
           <tr>
