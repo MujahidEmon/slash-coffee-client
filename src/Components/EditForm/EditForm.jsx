@@ -21,7 +21,7 @@ const EditForm = ({ coffee }) => {
 
 
     // Sending data to Server
-    fetch(`http://localhost:5000/coffees/${_id}`, {
+    fetch(`https://slash-expresso-emporium-server.vercel.app/coffees/${_id}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json'

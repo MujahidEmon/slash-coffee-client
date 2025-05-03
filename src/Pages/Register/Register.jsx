@@ -19,7 +19,7 @@ const Register = () => {
             console.log(res.user);
             const createdAt = res?.user.metadata.createdAt
             const user = {email, createdAt: createdAt}
-            fetch('http://localhost:5000/users', {
+            fetch('https://slash-expresso-emporium-server.vercel.app/users', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

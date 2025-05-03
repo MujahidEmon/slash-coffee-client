@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 
 const Delivered = () => {
   const status = encodeURIComponent("Delivered");
-  const url = `http://localhost:5000/orders?status=${status}`;
+  const url = `https://slash-expresso-emporium-server.vercel.app/orders?status=${status}`;
   const [orders, setOrders] = useState([]);
 
   // Function to fetch orders
@@ -42,7 +42,7 @@ const Delivered = () => {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/orders/${_id}`, {
+        fetch(`https://slash-expresso-emporium-server.vercel.app/orders/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

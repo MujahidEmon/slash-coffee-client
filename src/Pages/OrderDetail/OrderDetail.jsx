@@ -24,7 +24,7 @@ const OrderDetail = () => {
 
 
         // Sending data to Server
-        fetch(`http://localhost:5000/orders/${order._id}`, {
+        fetch(`https://slash-expresso-emporium-server.vercel.app/orders/${order._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

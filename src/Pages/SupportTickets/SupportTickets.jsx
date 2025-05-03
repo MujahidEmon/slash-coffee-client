@@ -8,7 +8,7 @@ const SupportTickets = () => {
     const navigate = useNavigate()
     const [complains, setComplains] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/complains')
+        fetch('https://slash-expresso-emporium-server.vercel.app/complains')
         .then(res => res.json())
         .then(data => {
             console.log(data);
@@ -32,7 +32,7 @@ const SupportTickets = () => {
                 confirmButtonText: "Yes, delete it!"
               }).then((result) => {
                 if (result.isConfirmed) {
-                    fetch(`http://localhost:5000/complains/${_id}`,{
+                    fetch(`https://slash-expresso-emporium-server.vercel.app/complains/${_id}`,{
                         method: 'DELETE'
                     })
                     .then(res => res.json())

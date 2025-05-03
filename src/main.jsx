@@ -36,22 +36,22 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/coffees"),
+        loader: () => fetch("https://slash-expresso-emporium-server.vercel.app/coffees"),
       },
       {
         path: "/addCoffee",
-        element:<PrivateRoutes><AddCoffeePage></AddCoffeePage></PrivateRoutes>,
+        element: <PrivateRoutes><AddCoffeePage></AddCoffeePage></PrivateRoutes>,
       },
       {
         path: "/updateCoffee/:id",
-        element:<UpdatePage></UpdatePage>,
+        element: <UpdatePage></UpdatePage>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/coffees/${params.id}`),
+          fetch(`https://slash-expresso-emporium-server.vercel.app/coffees/${params.id}`),
       },
       {
         path: "/coffeeDetails/:id",
         element: <CoffeeDetailsPage></CoffeeDetailsPage>,
-        loader: ({params}) => fetch(`http://localhost:5000/coffees/${params.id}`)
+        loader: ({ params }) => fetch(`https://slash-expresso-emporium-server.vercel.app/coffees/${params.id}`)
       },
       {
         path: "/login",
@@ -62,61 +62,61 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path:'/MyCart',
-        element:<MyCart></MyCart>
+        path: '/MyCart',
+        element: <MyCart></MyCart>
       },
       {
         path: '/manage',
         element: <PrivateRoutes><ManageOrders></ManageOrders></PrivateRoutes>,
         children: [
           {
-            path:`/manage`,
-            element:<PendingOrders></PendingOrders>
+            path: `/manage`,
+            element: <PendingOrders></PendingOrders>
           },
           {
-            path:'cooking',
-            element:<CookingOrders></CookingOrders>
+            path: 'cooking',
+            element: <CookingOrders></CookingOrders>
           },
           {
-            path:'readyToServe',
-            element:<ReadyToServe></ReadyToServe>
+            path: 'readyToServe',
+            element: <ReadyToServe></ReadyToServe>
           },
           {
-            path:'delivered',
-            element:<Delivered></Delivered>
+            path: 'delivered',
+            element: <Delivered></Delivered>
           },
           {
-            path:'manageProducts',
-            element:<ManageProducts></ManageProducts>
+            path: 'manageProducts',
+            element: <ManageProducts></ManageProducts>
           },
         ]
-        
+
       },
-      
-      
+
+
       {
         path: '/checkout',
         element: <Checkout></Checkout>
       },
       {
         path: '/coffees',
-        element:<AllCoffees></AllCoffees>
+        element: <AllCoffees></AllCoffees>
       },
       {
         path: "/updateOrder/:id",
-        element:<OrderDetail></OrderDetail>,
+        element: <OrderDetail></OrderDetail>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/orders/${params.id}`),
+          fetch(`https://slash-expresso-emporium-server.vercel.app/orders/${params.id}`),
       },
       {
-        path:'/supports',
+        path: '/supports',
         element: <SupportTickets></SupportTickets>
       },
       {
         path: "/complains/:id",
-        element:<SupportDetail></SupportDetail>,
+        element: <SupportDetail></SupportDetail>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/complains/${params.id}`),
+          fetch(`https://slash-expresso-emporium-server.vercel.app/complains/${params.id}`),
       },
     ],
   },

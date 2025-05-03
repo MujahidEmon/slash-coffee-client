@@ -29,7 +29,7 @@ const Checkout = () => {
             
             const newOrder = {name, phone, tableNumber, note, grandTotal, totalPrice, cartCoffees, status:'Pending' }
             console.log(newOrder);
-            fetch('http://localhost:5000/orders', {
+            fetch('https://slash-expresso-emporium-server.vercel.app/orders', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

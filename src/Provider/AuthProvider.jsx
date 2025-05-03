@@ -74,7 +74,7 @@ const AuthProvider = ({ children }) => {
 
   // load coffees from db
   useEffect(() => {
-    fetch(`http://localhost:5000/coffees`)
+    fetch(`https://slash-expresso-emporium-server.vercel.app/coffees`)
       .then(res => res.json())
       .then(data => {
         setCoffees(data)
@@ -85,7 +85,7 @@ const AuthProvider = ({ children }) => {
 
   // load orders from db
   useEffect(() => {
-    fetch(`http://localhost:5000/orders`)
+    fetch(`https://slash-expresso-emporium-server.vercel.app/orders`)
       .then(res => res.json())
       .then(data => {
         setOrders(data)
@@ -149,7 +149,7 @@ const AuthProvider = ({ children }) => {
     const message = form.get('message');
 
     const newComplain = { phone, email, service, message }
-    fetch('http://localhost:5000/complains', {
+    fetch('https://slash-expresso-emporium-server.vercel.app/complains', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

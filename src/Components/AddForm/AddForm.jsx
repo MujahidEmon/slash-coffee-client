@@ -24,7 +24,7 @@ const AddForm = () => {
 
 
     // Sending data to Server
-    fetch('http://localhost:5000/coffees', {
+    fetch('https://slash-expresso-emporium-server.vercel.app/coffees', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
