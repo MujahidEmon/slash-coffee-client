@@ -1,37 +1,37 @@
 import Swal from "sweetalert2";
 
-const EditForm = ({coffee}) => {
-  const {name, chef, category, photo, taste, supplier, _id, details} = coffee;
+const EditForm = ({ coffee }) => {
+  const { name, chef, category, photo, taste, supplier, _id, details } = coffee;
 
   const handleUpdateCoffee = e => {
-      e.preventDefault();
-  
-      const form = new FormData(e.currentTarget);
-  
-      const name = form.get('name')
-      const chef = form.get('chef')
-      const supplier = form.get('supplier')
-      const taste = form.get('taste')
-      const category = form.get('category')
-      const details = form.get('details')
-      const photo = form.get('photo')
-  
-      const updatedCoffee = {name, chef, supplier, taste, category, details, photo}
-      console.log(updatedCoffee);
-  
-  
-      // Sending data to Server
-      fetch(`http://localhost:5000/coffees/${_id}`, {
-        method: 'PUT',
-        headers: {
-          'content-type': 'application/json'
-        },
-        body: JSON.stringify(updatedCoffee)
-      })
-      .then(res=> res.json())
+    e.preventDefault();
+
+    const form = new FormData(e.currentTarget);
+
+    const name = form.get('name')
+    const chef = form.get('chef')
+    const supplier = form.get('supplier')
+    const taste = form.get('taste')
+    const category = form.get('category')
+    const details = form.get('details')
+    const photo = form.get('photo')
+
+    const updatedCoffee = { name, chef, supplier, taste, category, details, photo }
+    console.log(updatedCoffee);
+
+
+    // Sending data to Server
+    fetch(`http://localhost:5000/coffees/${_id}`, {
+      method: 'PUT',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(updatedCoffee)
+    })
+      .then(res => res.json())
       .then(data => {
         console.log(data);
-        if(data.modifiedCount>0){
+        if (data.modifiedCount > 0) {
           Swal.fire({
             title: 'Coffee Details Updated Successfully',
             // text: 'Do you want to continue',
@@ -40,8 +40,8 @@ const EditForm = ({coffee}) => {
           })
         }
       })
-    }
-  
+  }
+
   return (
     <div>
       <form onSubmit={handleUpdateCoffee}>
@@ -133,7 +133,7 @@ const EditForm = ({coffee}) => {
         </div>
 
         <div className="mt-8">
-        <input className="btn font-rancho bg-[#D2B48C] w-full text-xl text-white hover:text-black" type="submit" value="Update Coffee" />
+          <input className="btn font-rancho bg-[#D2B48C] w-full text-xl text-white hover:text-black" type="submit" value="Update Coffee" />
         </div>
       </form>
     </div>

@@ -20,6 +20,10 @@ import AllCoffees from "./Pages/AllCoffees/AllCoffees.jsx";
 import PendingOrders from "./Pages/PendingOrders/PendingOrders.jsx";
 import ConfirmedOrders from "./Pages/ConfirmedOrders/ConfirmedOrders.jsx";
 import ManageProducts from "./Pages/Manage/ManageProducts.jsx";
+import OrderDetail from "./Pages/OrderDetail/OrderDetail.jsx";
+import CookingOrders from "./Pages/CookingOrders/CookingOrders.jsx";
+import ReadyToServe from "./Pages/ReadyToServe/ReadyToServe.jsx";
+import Delivered from "./Pages/Delivered/Delivered.jsx";
 
 const router = createBrowserRouter([
   {
@@ -67,8 +71,16 @@ const router = createBrowserRouter([
             element:<PendingOrders></PendingOrders>
           },
           {
-            path:'confirmed',
-            element:<ConfirmedOrders></ConfirmedOrders>
+            path:'cooking',
+            element:<CookingOrders></CookingOrders>
+          },
+          {
+            path:'readyToServe',
+            element:<ReadyToServe></ReadyToServe>
+          },
+          {
+            path:'delivered',
+            element:<Delivered></Delivered>
           },
           {
             path:'manageProducts',
@@ -86,6 +98,12 @@ const router = createBrowserRouter([
       {
         path: '/coffees',
         element:<AllCoffees></AllCoffees>
+      },
+      {
+        path: "/updateOrder/:id",
+        element:<OrderDetail></OrderDetail>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/orders/${params.id}`),
       }
     ],
   },

@@ -11,16 +11,26 @@ const AuthProvider = ({ children }) => {
   const googleProvider = new GoogleAuthProvider();
   const gitHubProvider = new GithubAuthProvider();
 
+
+
+
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true)
   const [cartCoffees, setCartCoffees] = useState([]);
   const [Coffees, setCoffees] = useState([])
   const [orders, setOrders] = useState([])
 
+
+
+
+
   const login = (email, password) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password)
   }
+
+
+
 
   //signUp with email and password with name and photourl
   const signUp = (email, password) => {
@@ -28,11 +38,14 @@ const AuthProvider = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password)
   }
 
+
+
   // signIn with google
   const googleLogin = () => {
     setLoading(true);
     return signInWithPopup(auth, googleProvider)
   }
+
 
   // signIn with gitHub
   const gitHubLogin = () => {
@@ -40,11 +53,14 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(gitHubProvider)
   }
 
+
   // Logout
   const logOut = () => {
     setLoading(true);
     return signOut(auth)
   }
+
+
 
 
 
@@ -55,6 +71,8 @@ const AuthProvider = ({ children }) => {
   }, []);
 
 
+
+  // load coffees from db
   useEffect(() => {
     fetch(`http://localhost:5000/coffees`)
       .then(res => res.json())
@@ -64,6 +82,8 @@ const AuthProvider = ({ children }) => {
   }, []);
 
 
+
+  // load orders from db
   useEffect(() => {
     fetch(`http://localhost:5000/orders`)
       .then(res => res.json())
@@ -71,6 +91,8 @@ const AuthProvider = ({ children }) => {
         setOrders(data)
       })
   }, []);
+
+
 
 
   // function for add to cart and stored in local storage
@@ -81,8 +103,9 @@ const AuthProvider = ({ children }) => {
   };
 
 
-  // remove cart products and also from local storage
 
+
+  // remove cart products and also from local storage
   const handleRemoveFromCart = (_id) => {
     deleteFromCart(_id);
     const products = getCartCoffees();
@@ -90,10 +113,18 @@ const AuthProvider = ({ children }) => {
   };
 
 
+
+
   // function to find the total bill from the cart products
   const totalPrice = cartCoffees.reduce((sum, item) => sum + Number(item.price), 0);
   //   console.log("total: ",totalPrice);
   const grandTotal = totalPrice + 50;
+
+
+
+
+
+  // update user status in the app
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, currentUser => {
       setUser(currentUser)
@@ -107,6 +138,7 @@ const AuthProvider = ({ children }) => {
 
 
 
+
   // functions for sending complain message in footer
   const handleSendMessage = e => {
     e.preventDefault();
@@ -116,7 +148,7 @@ const AuthProvider = ({ children }) => {
     const service = form.get('service');
     const message = form.get('message');
 
-    const newComplain = {phone, email, service, message}
+    const newComplain = { phone, email, service, message }
     fetch('http://localhost:5000/complains', {
       method: 'POST',
       headers: {
@@ -124,14 +156,13 @@ const AuthProvider = ({ children }) => {
       },
       body: JSON.stringify(newComplain)
     })
-    .then(res => res.json())
-    .then(data => console.log(data))
-
-
+      .then(res => res.json())
+      .then(data => console.log(data))
   }
 
 
 
+  // passing context
   const authInfo = {
     user,
     login,
@@ -151,7 +182,7 @@ const AuthProvider = ({ children }) => {
     handleSendMessage
   }
 
-  
+
 
   return (
     <AuthContext.Provider value={authInfo}>

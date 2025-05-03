@@ -27,7 +27,7 @@ const Checkout = () => {
             
             console.log(name,  phone, tableNumber, note);
             
-            const newOrder = {name, phone, tableNumber, note, grandTotal, totalPrice, cartCoffees, status:'pending' }
+            const newOrder = {name, phone, tableNumber, note, grandTotal, totalPrice, cartCoffees, status:'Pending' }
             console.log(newOrder);
             fetch('http://localhost:5000/orders', {
                 method: 'POST',
@@ -113,7 +113,7 @@ const Checkout = () => {
                             type="text"
                             id="phone-input"
                             name="phone"
-                            className="z-20 block w-full rounded-e-lg border border-s-0 border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
+                            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
                             pattern="[0-9]{11}"
                             placeholder="01700000000"
                             required

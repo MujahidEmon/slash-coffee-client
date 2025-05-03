@@ -1,48 +1,49 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
-const TableRow = ({order}) => {
+const TableRow = ({order, handleDelete}) => {
 
     const {orders, setOrders} = useContext(AuthContext)
 
-    const handleDelete = _id => {
-            console.log(_id);
+    // const handleDelete = _id => {
+    //         console.log(_id);
     
-            Swal.fire({
-                title: "Are you sure?",
-                text: "You won't be able to revert this!",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#3085d6",
-                cancelButtonColor: "#d33",
-                confirmButtonText: "Yes, delete it!"
-              }).then((result) => {
-                if (result.isConfirmed) {
-                    fetch(`http://localhost:5000/orders/${_id}`,{
-                        method: 'DELETE'
-                    })
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log(data);
-                        if(data.deletedCount>0){
-                            Swal.fire({
-                                title: "Deleted!",
-                                text: "Your file has been deleted.",
-                                icon: "success"
-                            });
-                            const remaining = orders.filter(o => o._id !== _id)
-                            setOrders(remaining)
-                        }
-                    })
-                }
-              });
-        }
+    //         Swal.fire({
+    //             title: "Are you sure?",
+    //             text: "You won't be able to revert this!",
+    //             icon: "warning",
+    //             showCancelButton: true,
+    //             confirmButtonColor: "#3085d6",
+    //             cancelButtonColor: "#d33",
+    //             confirmButtonText: "Yes, delete it!"
+    //           }).then((result) => {
+    //             if (result.isConfirmed) {
+    //                 fetch(`http://localhost:5000/orders/${_id}`,{
+    //                     method: 'DELETE'
+    //                 })
+    //                 .then(res => res.json())
+    //                 .then(data => {
+    //                     console.log(data);
+    //                     if(data.deletedCount>0){
+    //                         Swal.fire({
+    //                             title: "Deleted!",
+    //                             text: "Your file has been deleted.",
+    //                             icon: "success"
+    //                         });
+    //                         const remaining = orders.filter(o => o._id !== _id)
+    //                         setOrders(remaining)
+    //                     }
+    //                 })
+    //             }
+    //           });
+    //     }
     return (
             <tr className="even:bg-blue-50">
             <td className="p-4 text-[15px] text-slate-900 font-medium">{order.name}</td>
             <td className="p-4 text-[15px] text-slate-600 font-medium">
-              {order.email}
+              {order.tableNumber}
             </td>
             <td className="p-4 text-[15px] text-slate-600 font-medium">
               {order.phone}
@@ -54,7 +55,7 @@ const TableRow = ({order}) => {
             <td className="p-4">
               <div className="flex items-center">
                 <button className="mr-3" title="Edit">
-                  <svg
+                  <Link to={`/updateOrder/${order._id}`}><svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="w-5 h-5 fill-blue-500 hover:fill-blue-700"
                     viewBox="0 0 348.882 348.882"
@@ -67,7 +68,7 @@ const TableRow = ({order}) => {
                       d="M303.85 138.388c-8.284 0-15 6.716-15 15v127.347c0 21.034-17.113 38.147-38.147 38.147H68.904c-21.035 0-38.147-17.113-38.147-38.147V100.413c0-21.034 17.113-38.147 38.147-38.147h131.587c8.284 0 15-6.716 15-15s-6.716-15-15-15H68.904C31.327 32.266.757 62.837.757 100.413v180.321c0 37.576 30.571 68.147 68.147 68.147h181.798c37.576 0 68.147-30.571 68.147-68.147V153.388c.001-8.284-6.715-15-14.999-15z"
                       data-original="#000000"
                     />
-                  </svg>
+                  </svg></Link>
                 </button>
                 <button onClick={() =>handleDelete(order._id)} title="Delete">
                   <svg

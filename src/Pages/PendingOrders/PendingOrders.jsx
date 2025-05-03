@@ -1,8 +1,55 @@
-import React from "react";
+import { useContext, useEffect, useState } from "react";
 import TableRow from "../../Components/TableRow/TableRow";
+import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const PendingOrders = () => {
-    // console.log(orders);
+  // loading orders using context
+  // const { orders } = useContext(AuthContext);
+  const url = `http://localhost:5000/orders?status=Pending`;
+  const [orders, setOrders] = useState([])
+  console.log(orders);
+  useEffect(() => {
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        setOrders(data)
+      })
+  }, [])
+
+  const handleDelete = _id => {
+    console.log(_id);
+
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/orders/${_id}`, {
+          method: 'DELETE'
+        })
+          .then(res => res.json())
+          .then(data => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+              });
+              const remaining = orders.filter(o => o._id !== _id)
+              setOrders(remaining)
+            }
+          })
+      }
+    });
+  }
+
   return (
     <div className="overflow-x-auto ">
       <table className="min-w-full bg-white">
@@ -30,9 +77,9 @@ const PendingOrders = () => {
         </thead>
 
         <tbody className="whitespace-nowrap">
-          {/* {
-            orders.map((order, idx) => <TableRow key={idx} order={order}></TableRow>)
-        } */}
+          {
+            orders.map((order, idx) => <TableRow handleDelete={handleDelete} key={idx} order={order}></TableRow>)
+          }
         </tbody>
       </table>
     </div>

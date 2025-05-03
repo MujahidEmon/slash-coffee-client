@@ -40,7 +40,7 @@ const Home = () => {
 
 
             {/* Follow Section */}
-            <div className="lg:max-w-7xl max-w-lg mx-auto">
+            {/* <div className="lg:max-w-7xl max-w-lg mx-auto">
                 <div className="flex flex-col items-center my-14 justify-center">
                     <p>Follow Us Now</p>
                     <h1 className="font-rancho text-3xl lg:text-6xl">Follow on Instagram</h1>
@@ -55,7 +55,7 @@ const Home = () => {
                     <img className="lg:w-3xs lg:h-[256px] h-[112px] w-28" src="/src/assets/images/cups/Rectangle 15.png" alt="" />
                     <img className="lg:w-3xs lg:h-[256px] h-[112px] w-28" src="/src/assets/images/cups/Rectangle 16.png" alt="" />
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 };

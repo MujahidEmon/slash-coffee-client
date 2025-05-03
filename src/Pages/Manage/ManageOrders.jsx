@@ -22,14 +22,34 @@ const ManageOrders = () => {
           Pending Orders
         </NavLink>
         <NavLink
-          to={'confirmed'}
+          to={'cooking'}
           id="homeTab"
 
           className={({ isActive }) =>
             isActive ? "bg-[url('https://i.ibb.co.com/Ws9RY1T/15.jpg')] text-white  font-semibold text-[15px] rounded-t-2xl text-center py-3 px-6 border-b-2 cursor-pointer transition-all" : "font-semibold text-[15px] rounded-t-2xl text-center py-3 px-6 border-b-2 cursor-pointer transition-all text-slate-600 hover:bg-gray-50 border-transparent"
           }
         >
-          Pending Orders
+          Cooking
+        </NavLink>
+        <NavLink
+          to={'readyToServe'}
+          id="homeTab"
+
+          className={({ isActive }) =>
+            isActive ? "bg-[url('https://i.ibb.co.com/Ws9RY1T/15.jpg')] text-white  font-semibold text-[15px] rounded-t-2xl text-center py-3 px-6 border-b-2 cursor-pointer transition-all" : "font-semibold text-[15px] rounded-t-2xl text-center py-3 px-6 border-b-2 cursor-pointer transition-all text-slate-600 hover:bg-gray-50 border-transparent"
+          }
+        >
+          Ready To Serve
+        </NavLink>
+        <NavLink
+          to={'delivered'}
+          id="homeTab"
+
+          className={({ isActive }) =>
+            isActive ? "bg-[url('https://i.ibb.co.com/Ws9RY1T/15.jpg')] text-white  font-semibold text-[15px] rounded-t-2xl text-center py-3 px-6 border-b-2 cursor-pointer transition-all" : "font-semibold text-[15px] rounded-t-2xl text-center py-3 px-6 border-b-2 cursor-pointer transition-all text-slate-600 hover:bg-gray-50 border-transparent"
+          }
+        >
+          Delivered
         </NavLink>
         <NavLink
           to={'manageProducts'}
