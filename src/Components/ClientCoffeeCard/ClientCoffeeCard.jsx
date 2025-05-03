@@ -20,7 +20,7 @@ const ClientCoffeeCard = ({coffee}) => {
                     <p><span className="font-bold">Price: </span>{price}</p>
                 </div>
                 <div className="flex flex-col justify-center gap-4 items-center">
-                    <Link to={'/coffeeDetails'} className="bg-amber-100 btn"><IoEye size={25}></IoEye></Link>
+                    <Link to={`/coffeeDetails/${_id}`} className="bg-amber-100 btn"><IoEye size={25}></IoEye></Link>
                     <button onClick={() => handleAddToCart(coffee)} className="btn" ><BiCartAdd size={25}></BiCartAdd></button>
                 </div>
             </div>

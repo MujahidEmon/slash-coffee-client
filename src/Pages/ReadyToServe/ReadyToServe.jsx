@@ -6,14 +6,27 @@ const ReadyToServe = () => {
     const status = encodeURIComponent("Ready To Serve");
     const url = `http://localhost:5000/orders?status=${status}`;
     const [orders, setOrders] = useState([])
-    console.log(orders);
-    useEffect(() => {
+    const fetchOrders = () => {
         fetch(url)
-            .then(res => res.json())
-            .then(data => {
-                setOrders(data)
-            })
-    }, [])
+          .then(res => res.json())
+          .then(data => {
+            setOrders(data);
+          })
+          .catch(error => {
+            console.error("Error fetching orders:", error);
+          });
+      };
+    
+      // Polling setup
+      useEffect(() => {
+        fetchOrders(); // initial fetch
+    
+        const intervalId = setInterval(() => {
+          fetchOrders(); // fetch every 5 seconds
+        }, 5000);
+    
+        return () => clearInterval(intervalId); // cleanup on unmount
+      }, [url]);
 
 
     const handleDelete = _id => {
