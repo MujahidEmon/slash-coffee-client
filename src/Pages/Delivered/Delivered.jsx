@@ -58,7 +58,7 @@ const Delivered = () => {
   };
 
   return (
-    <div className="overflow-x-auto p-4">
+    <div className="overflow-x-auto ">
       <table className="min-w-full bg-white">
         <thead className="bg-[url('https://i.ibb.co.com/Ws9RY1T/15.jpg')] whitespace-nowrap">
           <tr>

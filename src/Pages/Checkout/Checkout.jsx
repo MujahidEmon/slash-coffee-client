@@ -218,7 +218,7 @@ const Checkout = () => {
                     </li>
   
                     <li className="flex items-center justify-between">
-                      <span>Shipping</span>
+                      <span>Service Charge</span>
                       <span className="text-gray-900">BDT {50}</span>
                     </li>
                   </ul>

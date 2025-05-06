@@ -24,7 +24,7 @@ const Navbar = () => {
               />
               <Link
                 to={"/"}
-                className="text-center text-3xl text-white font-rancho"
+                className="text-center lg:text-3xl text-xl text-white font-rancho"
               >
                 Slash Coffee Emporium
               </Link>
