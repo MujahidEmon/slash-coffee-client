@@ -19,9 +19,9 @@ const Navbar = () => {
       <div className="navbar-start">
         <div className="dropdown lg:hidden">
           <div tabIndex={0} role="button">
-            <div className="flex navbar-center flex-row justify-center items-center gap-2">
-              <img className="lg:w-10 w-8" src={logo} alt="" />
-              <Link to={"/"} className="text-center lg:text-3xl text-lg text-white font-rancho">
+            <div className="flex navbar-center flex-row justify-center items-center ">
+              <img className="lg:w-10 w-8 md:flex hidden" src={logo} alt="" />
+              <Link to={"/"} className="text-center lg:text-3xl text-lg font-semibold text-white font-rancho">
                 Slash Coffee Emporium
               </Link>
             </div>
@@ -70,7 +70,7 @@ const Navbar = () => {
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
             <div className="indicator">
               <CgShoppingCart color="white" size={25} />
-              <span className="badge badge-sm indicator-item">{cartCoffees.length}</span>
+              <span className="badge badge-xs md:badge-sm indicator-item">{cartCoffees.length}</span>
             </div>
           </div>
           <div tabIndex={0} className="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-52 shadow">
@@ -85,7 +85,7 @@ const Navbar = () => {
         </div>
         <div className="dropdown dropdown-end">
           <div tabIndex={0} role="button" className="btn btn-ghost ml-4 btn-circle avatar">
-            <div className="w-10 rounded-full">
+            <div className="w-8 md:w-10 rounded-full">
               <img alt="User Avatar" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
             </div>
           </div>
