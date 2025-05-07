@@ -5,16 +5,20 @@ import Swal from "sweetalert2";
 
 const PendingOrders = () => {
   // loading orders using context
-  // const { orders } = useContext(AuthContext);
+  const { loading, setLoading } = useContext(AuthContext);
   const url = `https://slash-expresso-emporium-server.vercel.app/orders?status=Pending`;
   const [orders, setOrders] = useState([])
   console.log(orders);
   useEffect(() => {
+    setLoading(true);
     fetch(url)
       .then(res => res.json())
       .then(data => {
-        setOrders(data)
+        setLoading(true);
+        setOrders(data);
+        setLoading(false);
       })
+      setLoading(false)
   }, [])
 
   const handleDelete = _id => {

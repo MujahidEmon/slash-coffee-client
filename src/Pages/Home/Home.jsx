@@ -4,14 +4,16 @@ import Hero from "../../Components/Hero/Hero";
 import { FaCoffee } from "react-icons/fa";
 import Footer from "../../Components/Footer/Footer";
 import CoffeeCard from "../../Components/CoffeeCard/CoffeeCard";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import ClientCoffeeCard from "../../Components/ClientCoffeeCard/ClientCoffeeCard";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const Home = () => {
-    const loadedCoffees = useLoaderData();
-    const [coffees, setCoffees] = useState(loadedCoffees)
-    console.log(coffees);
+    // const loadedCoffees = useLoaderData();
+    // const [coffees, setCoffees] = useState(loadedCoffees)
+    const {Coffees} = useContext(AuthContext);
+    console.log(Coffees);
 
     return (
         <div className="">
@@ -31,7 +33,7 @@ const Home = () => {
                     <div className=" mx-auto w-fit grid grid-flow-row md:grid-cols-2 justify-center items-center gap-9 ">
 
                         {
-                            coffees.map((coffee,_id) => <ClientCoffeeCard key={_id} coffee={coffee} coffees={coffees} setCoffees={setCoffees}></ClientCoffeeCard>)
+                            Coffees.map((coffee,_id) => <ClientCoffeeCard key={_id} coffee={coffee} coffees={Coffees} ></ClientCoffeeCard>)
                         }
                         
                     </div>

@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import TableRow from "../../Components/TableRow/TableRow";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const ReadyToServe = () => {
+    const {setLoading} = useContext(AuthContext);
     const status = encodeURIComponent("Ready To Serve");
     const url = `https://slash-expresso-emporium-server.vercel.app/orders?status=${status}`;
     const [orders, setOrders] = useState([])
@@ -10,7 +12,9 @@ const ReadyToServe = () => {
         fetch(url)
           .then(res => res.json())
           .then(data => {
+            setLoading(true);
             setOrders(data);
+            setLoading(false);
           })
           .catch(error => {
             console.error("Error fetching orders:", error);

@@ -67,7 +67,9 @@ const AuthProvider = ({ children }) => {
   // load the cart products from localstorage
   useEffect(() => {
     const products = getCartCoffees();
+    setLoading(true);
     setCartCoffees(products);
+    setLoading(false);
   }, []);
 
 
@@ -77,7 +79,9 @@ const AuthProvider = ({ children }) => {
     fetch(`https://slash-expresso-emporium-server.vercel.app/coffees`)
       .then(res => res.json())
       .then(data => {
+        setLoading(true);
         setCoffees(data)
+        setLoading(false)
       })
   }, []);
 
@@ -88,7 +92,9 @@ const AuthProvider = ({ children }) => {
     fetch(`https://slash-expresso-emporium-server.vercel.app/orders`)
       .then(res => res.json())
       .then(data => {
+        setLoading(true);
         setOrders(data)
+        setLoading(false);
       })
   }, []);
 
@@ -171,6 +177,7 @@ const AuthProvider = ({ children }) => {
     gitHubLogin,
     logOut,
     loading,
+    setLoading,
     handleAddToCart,
     handleRemoveFromCart,
     totalPrice,
