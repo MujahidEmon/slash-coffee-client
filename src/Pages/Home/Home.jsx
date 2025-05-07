@@ -4,9 +4,12 @@ import Hero from "../../Components/Hero/Hero";
 import { FaCoffee } from "react-icons/fa";
 import Footer from "../../Components/Footer/Footer";
 import CoffeeCard from "../../Components/CoffeeCard/CoffeeCard";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ClientCoffeeCard from "../../Components/ClientCoffeeCard/ClientCoffeeCard";
 import { AuthContext } from "../../Provider/AuthProvider";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 
 
 const Home = () => {
@@ -14,14 +17,15 @@ const Home = () => {
     // const [coffees, setCoffees] = useState(loadedCoffees)
     const {Coffees} = useContext(AuthContext);
     console.log(Coffees);
+    useEffect(() => {
+        AOS.init({ duration: 600, once: false });
+      }, []);
 
     return (
         <div className="">
             <Hero></Hero>
-            <Banner></Banner>
-
             {/* Products section */}
-            <div className="bg-[url('https://i.ibb.co.com/fNtQhMV/1.png')] bg-cover bg-center">
+            <div data-aos="fade-up" className="bg-[url('https://i.ibb.co.com/fNtQhMV/1.png')] bg-cover bg-center">
                 <div className="flex flex-col items-center justify-center gap-3 my-14">
                     <p>--- Sip & Savor ---</p>
                     <h1 className="font-rancho text-3xl stroke-black lg:text-6xl drop-shadow-2xl">Our Products</h1>
@@ -39,6 +43,8 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <Banner></Banner>
+
 
 
             {/* Follow Section */}

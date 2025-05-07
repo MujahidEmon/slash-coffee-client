@@ -19,8 +19,8 @@ const Navbar = () => {
       <div className="navbar-start">
         <div className="dropdown lg:hidden">
           <div tabIndex={0} role="button">
+            <img className="lg:w-10 w-8 flex lg:hidden" src={logo} alt="" />
             {/* <div className="flex navbar-center flex-row items-center ">
-              <img className="lg:w-10 w-8" src={logo} alt="" />
               <Link to={"/"} className="text-center lg:text-3xl text-sm font-semibold text-white font-rancho">
                 Slash Coffee Emporium
               </Link>
@@ -40,7 +40,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex flex-row items-center md:gap-2 gap-1 lg:text-xl">
-          <img className="lg:w-10 w-8" src={logo} alt="" />
+          <img className="lg:w-10 w-8 md:flex hidden" src={logo} alt="" />
           <Link to={"/"} className="lg:text-3xl text-sm font-semibold text-white font-rancho">
             Slash Coffee Emporium
           </Link>
