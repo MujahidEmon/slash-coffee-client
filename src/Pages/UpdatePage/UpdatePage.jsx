@@ -1,14 +1,15 @@
 import { TiArrowBackOutline } from "react-icons/ti";
 import EditForm from "../../Components/EditForm/EditForm";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 
 const UpdatePage = () => {
-    const coffee = useLoaderData()
+    const navigate = useNavigate();
+    const coffee = useLoaderData();
     console.log(coffee);
     return (
         <div className="bg-[url('https://i.ibb.co.com/6bMvLDn/11.png')]">
             <div className="lg:max-w-7xl max-w-sm mx-auto ">
-                <Link to={'/'} className="flex items-center flex-row my-8 hover:cursor-pointer"><TiArrowBackOutline size={35} /><button className="font-rancho text-center text-3xl cursor-pointer">Back to Home</button></Link>
+                <button onClick={()=>navigate(-1)} to={'/'} className="flex items-center flex-row my-8 hover:cursor-pointer"><TiArrowBackOutline size={35} /><button className="font-rancho text-center text-3xl cursor-pointer">Back</button></button>
                 <div className=" bg-[#F4F3F0] lg:px-16 px-7 rounded-lg lg:py-18">
                     <div className="text-center ">
                         <h2 className="font-rancho text-4xl">Update Existing Coffee Details</h2>

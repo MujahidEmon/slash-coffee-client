@@ -10,6 +10,7 @@ import {
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.config";
 import { deleteFromCart, getCartCoffees, saveToCart } from "../Utils/LocalStroage";
+import Swal from "sweetalert2";
 
 export const AuthContext = createContext(null);
 
@@ -78,7 +79,7 @@ const AuthProvider = ({ children }) => {
 
   // 📦 Load orders
   useEffect(() => {
-    fetch("http://localhost:5000/orders")
+    fetch("https://slash-expresso-emporium-server.onrender.com/orders")
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
@@ -109,7 +110,17 @@ const AuthProvider = ({ children }) => {
       body: JSON.stringify(newComplain),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then(data => {
+              console.log(data);
+              if (data.insertedId) {
+                Swal.fire({
+                  title: 'Thank You for Feedback',
+                  // text: 'Do you want to continue',
+                  icon: 'success',
+                  confirmButtonText: 'Back'
+                })
+              }
+            })
   };
 
   const authInfo = {

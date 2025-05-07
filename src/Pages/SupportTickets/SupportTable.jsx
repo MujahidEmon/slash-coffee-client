@@ -1,4 +1,4 @@
-import { BsEye, BsEyeFill } from "react-icons/bs";
+import { BsEye} from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 const SupportTable = ({complain, handleDelete}) => {
@@ -19,7 +19,7 @@ const SupportTable = ({complain, handleDelete}) => {
                         <Link to={`/complains/${complain._id}`}><BsEye size={25}></BsEye></Link>
                     </button>
                     <button onClick={() => handleDelete(complain._id)} title="Delete">
-                        <svg
+                        <span><svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="w-5 h-5 fill-red-500 hover:fill-red-700"
                             viewBox="0 0 24 24"
@@ -32,7 +32,7 @@ const SupportTable = ({complain, handleDelete}) => {
                                 d="M11 17v-7a1 1 0 0 0-2 0v7a1 1 0 0 0 2 0Zm4 0v-7a1 1 0 0 0-2 0v7a1 1 0 0 0 2 0Z"
                                 data-original="#000000"
                             />
-                        </svg>
+                        </svg></span>
                     </button>
                 </div>
             </td>

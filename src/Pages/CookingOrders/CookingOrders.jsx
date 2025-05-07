@@ -7,7 +7,7 @@ const CookingOrders = () => {
     const{setLoading} = useContext(AuthContext)
     const url = `https://slash-expresso-emporium-server.onrender.com/orders?status=Cooking`;
     const [orders, setOrders] = useState([])
-    console.log(orders);
+    // console.log(orders);
     useEffect(() => {
         fetch(url)
             .then(res => res.json())

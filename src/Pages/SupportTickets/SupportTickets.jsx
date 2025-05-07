@@ -11,7 +11,7 @@ const SupportTickets = () => {
         fetch('https://slash-expresso-emporium-server.onrender.com/complains')
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            // console.log(data);
             setComplains(data)
         })
     },[])
@@ -20,7 +20,7 @@ const SupportTickets = () => {
 
 
     const handleDelete = _id => {
-            console.log(_id);
+            // console.log(_id);
     
             Swal.fire({
                 title: "Are you sure?",

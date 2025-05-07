@@ -5,8 +5,8 @@ import ClientCoffeeCard from "../../Components/ClientCoffeeCard/ClientCoffeeCard
 const AllCoffees = () => {
     const { Coffees } = useContext(AuthContext);
     return (
-        <div>
-            <h1 className="text-2xl md:text-4xl my-9 lg:text-5xl font-bold text-center">Get Your Best Coffees Here</h1>
+        <div className="my-10">
+            <h1 className="text-2xl md:text-4xl my-12 lg:text-5xl font-bold text-center ">Get Your Best Coffees Here</h1>
             <div className=" mx-auto w-fit grid grid-flow-row md:grid-cols-2 justify-center items-center gap-9 ">
 
                 {

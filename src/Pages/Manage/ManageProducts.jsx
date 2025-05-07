@@ -1,12 +1,12 @@
-import { useContext, useState } from 'react';
+import { useContext} from 'react';
 import CoffeeCard from '../../Components/CoffeeCard/CoffeeCard';
 import { FaCoffee } from 'react-icons/fa';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const ManageProducts = () => {
     const { Coffees, setCoffees } = useContext(AuthContext)
-    console.log(Coffees);
+    // console.log(Coffees);
     return (
         <div className="bg-[url('https://i.ibb.co.com/fNtQhMV/1.png')] bg-cover bg-center">
 

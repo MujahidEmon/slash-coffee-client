@@ -1,12 +1,11 @@
 import { useContext, useState } from "react";
-import { FaGithub, FaGoogle } from "react-icons/fa";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import loginImg from '../../assets/images/more/6.png'
 import Swal from "sweetalert2";
 const Login = () => {
     const [showPass, setShowPass] = useState(false)
-    const { login, googleLogin, gitHubLogin } = useContext(AuthContext)
+    const { login} = useContext(AuthContext)
     const navigate = useNavigate();
     const location = useLocation()
 
@@ -60,7 +59,7 @@ const Login = () => {
     //         })
     // }
     return (
-        <div className="bg-[url('https://i.ibb.co.com/6bMvLDn/11.png')]  bg-cover bg-center">
+        <div className="bg-[url('https://i.ibb.co.com/6bMvLDn/11.png')] my-10 bg-cover bg-center">
             <div className="lg:max-w-7xl max-w-lg mt-17 rounded-xl py-6 bg-[#F4F3F0]  items-center md:flex-row flex-col flex mx-auto">
                 <div className="lg:w-1/2 w-full flex items-center justify-center">
                     <img className="lg:h-96 md:flex hidden h-40 ml-0 lg:ml-16 rounded-xl " src={loginImg} alt="" />

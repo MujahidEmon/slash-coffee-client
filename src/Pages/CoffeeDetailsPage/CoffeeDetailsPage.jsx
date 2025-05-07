@@ -7,7 +7,7 @@ const CoffeeDetailsPage = () => {
     console.log(coffee);
     const {name, chef, taste, details, photo, price, supplier, category} = coffee
     return (
-        <div className="bg-[url('https://i.ibb.co.com/fNtQhMV/1.png')] mt-8 bg-cover bg-center">
+        <div className="bg-[url('https://i.ibb.co.com/fNtQhMV/1.png')] my-8 bg-cover bg-center">
 
             <div className="md:max-w-4xl  bg-[#F4F3F0] p-6  mx-auto max-w-sm">
                 {/* <Link to={'/'} className="flex items-center flex-row my-8 hover:cursor-pointer"><TiArrowBackOutline size={35} /><button className="font-rancho text-center text-3xl cursor-pointer">Back to Home</button></Link> */}

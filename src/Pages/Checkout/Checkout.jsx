@@ -4,7 +4,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import CartCard from "../../Components/CartCard/CartCard";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
-import { Navigate, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 const Checkout = () => {
     const {cartCoffees, totalPrice, grandTotal} = useContext(AuthContext)

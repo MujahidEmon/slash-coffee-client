@@ -8,7 +8,7 @@ const ManageOrders = () => {
     "font-semibold text-[15px] md:rounded-t-2xl text-center py-3 px-6 border-b-2 cursor-pointer transition-all text-slate-600 hover:bg-gray-50 border-transparent";
 
   return (
-    <div className="p-4">
+    <div className="p-4 mb-10">
       {/* Dropdown for small screens */}
       <div className="dropdown md:hidden mb-4">
         <label

@@ -1,6 +1,6 @@
 import { GiConfirmed } from "react-icons/gi";
 import { TiArrowBackOutline } from "react-icons/ti";
-import { Link, useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const OrderDetail = () => {
@@ -52,7 +52,7 @@ const OrderDetail = () => {
             })
     }
     return (
-        <div className="bg-[url('https://i.ibb.co.com/fNtQhMV/1.png')] bg-cover bg-center">
+        <div className="bg-[url('https://i.ibb.co.com/fNtQhMV/1.png')] my-10 bg-cover bg-center">
 
             <div className="lg:max-w-7xl   mx-auto max-w-sm">
                 <button onClick={() => navigate(-1)} to={'/'} className="flex items-center flex-row my-8 hover:cursor-pointer"><TiArrowBackOutline size={35} /><button className="font-rancho text-center text-3xl cursor-pointer">Back</button></button>

@@ -2,7 +2,7 @@
 import { useContext } from "react";
 import { IoEye } from "react-icons/io5";
 import { MdDelete, MdEdit } from "react-icons/md";
-import { data, Link } from "react-router-dom";
+import {  Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider";
 

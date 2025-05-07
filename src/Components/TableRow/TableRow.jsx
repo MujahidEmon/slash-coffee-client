@@ -1,44 +1,8 @@
-import { useContext } from "react";
-import { AuthContext } from "../../Provider/AuthProvider";
-import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 
 const TableRow = ({order, handleDelete}) => {
 
-    const {orders, setOrders} = useContext(AuthContext)
-
-    // const handleDelete = _id => {
-    //         console.log(_id);
-    
-    //         Swal.fire({
-    //             title: "Are you sure?",
-    //             text: "You won't be able to revert this!",
-    //             icon: "warning",
-    //             showCancelButton: true,
-    //             confirmButtonColor: "#3085d6",
-    //             cancelButtonColor: "#d33",
-    //             confirmButtonText: "Yes, delete it!"
-    //           }).then((result) => {
-    //             if (result.isConfirmed) {
-    //                 fetch(`https://slash-expresso-emporium-server.onrender.com/orders/${_id}`,{
-    //                     method: 'DELETE'
-    //                 })
-    //                 .then(res => res.json())
-    //                 .then(data => {
-    //                     console.log(data);
-    //                     if(data.deletedCount>0){
-    //                         Swal.fire({
-    //                             title: "Deleted!",
-    //                             text: "Your file has been deleted.",
-    //                             icon: "success"
-    //                         });
-    //                         const remaining = orders.filter(o => o._id !== _id)
-    //                         setOrders(remaining)
-    //                     }
-    //                 })
-    //             }
-    //           });
-    //     }
+   
     return (
             <tr className="even:bg-blue-50">
             <td className="p-4 text-[15px] text-slate-900 font-medium">{order.name}</td>

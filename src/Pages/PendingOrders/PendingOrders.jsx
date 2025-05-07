@@ -5,10 +5,10 @@ import Swal from "sweetalert2";
 
 const PendingOrders = () => {
   // loading orders using context
-  const { loading, setLoading } = useContext(AuthContext);
+  const { setLoading } = useContext(AuthContext);
   const url = `https://slash-expresso-emporium-server.onrender.com/orders?status=Pending`;
   const [orders, setOrders] = useState([])
-  console.log(orders);
+  // console.log(orders);
   useEffect(() => {
     setLoading(true);
     fetch(url)

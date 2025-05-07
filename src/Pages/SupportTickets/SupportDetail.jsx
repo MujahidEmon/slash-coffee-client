@@ -1,5 +1,5 @@
 import { TiArrowBackOutline } from "react-icons/ti";
-import { Link, useLoaderData, useNavigate } from "react-router-dom";
+import {  useLoaderData, useNavigate } from "react-router-dom";
 
 const SupportDetail = () => {
     const navigate = useNavigate();
@@ -7,7 +7,7 @@ const SupportDetail = () => {
     console.log(complain);
     const {phone, email, message, service} = complain
     return (
-        <div className="bg-[url('https://i.ibb.co.com/fNtQhMV/1.png')] mt-8 bg-cover bg-center">
+        <div className="bg-[url('https://i.ibb.co.com/fNtQhMV/1.png')] my-8 bg-cover bg-center">
 
             <div className="md:max-w-xl  bg-[#F4F3F0] p-6 text-black  mx-auto max-w-sm">
                 <button onClick={() => navigate(-1)} className="flex items-center flex-row  hover:cursor-pointer"><TiArrowBackOutline size={35} /><button className="font-rancho text-center text-3xl cursor-pointer">Back </button></button>
