@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { BsMailbox } from "react-icons/bs";
+import logo from "../../assets/images/more/logo1.png"
 import {
   FaFacebook,
   FaInstagram,
@@ -20,7 +21,7 @@ const Footer = () => {
       <div className="bg-[url('https://i.ibb.co.com/2trFcPk/13.jpg')] mt-17 py-16">
         <div className="lg:max-w-7xl md:max-w-xl max-w-sm mx-auto">
           <img
-            src="/src/assets/images/more/logo1.png"
+            src={logo}
             className="lg:h-20 h-16"
             alt=""
           />

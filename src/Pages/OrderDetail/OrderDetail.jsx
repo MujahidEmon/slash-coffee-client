@@ -1,6 +1,7 @@
 import { GiConfirmed } from "react-icons/gi";
 import { TiArrowBackOutline } from "react-icons/ti";
 import { Link, useLoaderData, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const OrderDetail = () => {
     const navigate = useNavigate();
@@ -36,10 +37,16 @@ const OrderDetail = () => {
                 console.log(data);
                 if (data.modifiedCount > 0) {
                     Swal.fire({
-                        title: 'Coffee Details Updated Successfully',
+                        title: 'Order Details Updated Successfully',
                         // text: 'Do you want to continue',
                         icon: 'success',
                         confirmButtonText: 'Back'
+                    })
+                    .then(result => {
+                        if(result.isConfirmed)
+                        {
+                            navigate(-1)
+                        }
                     })
                 }
             })

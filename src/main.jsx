@@ -44,7 +44,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/updateCoffee/:id",
-        element: <UpdatePage></UpdatePage>,
+        element: <PrivateRoutes><UpdatePage></UpdatePage></PrivateRoutes>,
         loader: ({ params }) =>
           fetch(`https://slash-expresso-emporium-server.vercel.app/coffees/${params.id}`),
       },
@@ -71,23 +71,23 @@ const router = createBrowserRouter([
         children: [
           {
             path: `/manage`,
-            element: <PendingOrders></PendingOrders>
+            element: <PrivateRoutes><PendingOrders></PendingOrders></PrivateRoutes>
           },
           {
             path: 'cooking',
-            element: <CookingOrders></CookingOrders>
+            element: <PrivateRoutes><CookingOrders></CookingOrders></PrivateRoutes>
           },
           {
             path: 'readyToServe',
-            element: <ReadyToServe></ReadyToServe>
+            element: <PrivateRoutes><ReadyToServe></ReadyToServe></PrivateRoutes>
           },
           {
             path: 'delivered',
-            element: <Delivered></Delivered>
+            element: <PrivateRoutes><Delivered></Delivered></PrivateRoutes>
           },
           {
             path: 'manageProducts',
-            element: <ManageProducts></ManageProducts>
+            element: <PrivateRoutes><ManageProducts></ManageProducts></PrivateRoutes>
           },
         ]
 
@@ -104,17 +104,17 @@ const router = createBrowserRouter([
       },
       {
         path: "/updateOrder/:id",
-        element: <OrderDetail></OrderDetail>,
+        element: <PrivateRoutes><OrderDetail></OrderDetail></PrivateRoutes>,
         loader: ({ params }) =>
           fetch(`https://slash-expresso-emporium-server.vercel.app/orders/${params.id}`),
       },
       {
         path: '/supports',
-        element: <SupportTickets></SupportTickets>
+        element: <PrivateRoutes><SupportTickets></SupportTickets></PrivateRoutes>
       },
       {
         path: "/complains/:id",
-        element: <SupportDetail></SupportDetail>,
+        element: <PrivateRoutes><SupportDetail></SupportDetail></PrivateRoutes>,
         loader: ({ params }) =>
           fetch(`https://slash-expresso-emporium-server.vercel.app/complains/${params.id}`),
       },

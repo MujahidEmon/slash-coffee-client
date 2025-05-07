@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { CgShoppingCart } from "react-icons/cg";
+import logo from "../../assets/images/more/logo1.png"
 
 const Navbar = () => {
   const { user, cartCoffees, totalPrice, logOut } = useContext(AuthContext);
@@ -19,7 +20,7 @@ const Navbar = () => {
             <div className="flex navbar-center flex-row justify-center items-center gap-2">
               <img
                 className="w-10"
-                src="/src/assets/images/more/logo1.png"
+                src={logo}
                 alt=""
               />
               <Link

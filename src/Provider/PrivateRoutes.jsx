@@ -12,12 +12,12 @@ const PrivateRoutes = ({ children }) => {
             <HashLoader color="#36d7b7" />
         </div>
     }
-    if (user) {
-        return children;
+    if(!user) {
+        return <Navigate to="/login" state={{ from: location }} replace />
     }
-    else {
-        return <Navigate state={location.pathname} to={'/login'}></Navigate>
-    }
+    
+    return children;
+    
 };
 
 export default PrivateRoutes;
