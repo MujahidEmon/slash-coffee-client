@@ -192,22 +192,22 @@ const Login = () => {
                     </button> */}
                                 <button className="btn font-rancho bg-[#E3B577] text-xl w-full">Login</button>
 
-                                <p className="text-gray-800 text-sm text-center mt-2">
+                                {/* <p className="text-gray-800 text-sm text-center mt-2">
                                     Don't have an account ?{" "}
                                     <Link className="text-green-500 font-bold" to={"/register"}>
                                         Register
                                     </Link>
-                                </p>
+                                </p> */}
                             </div>
                         </div>
 
-                        <div className="my-4 flex items-center gap-4">
+                        {/* <div className="my-4 flex items-center gap-4">
                             <hr className="w-full border-gray-300" />
                             <p className="text-sm text-gray-800 text-center">or</p>
                             <hr className="w-full border-gray-300" />
-                        </div>
+                        </div> */}
 
-                        <div className=" flex items-center gap-6 justify-center">
+                        {/* <div className=" flex items-center gap-6 justify-center">
                             <button
                                 onClick={handleGoogleLogin}
                                 className="btn btn-circle"
@@ -220,7 +220,7 @@ const Login = () => {
                             >
                                 <FaGithub size={30}></FaGithub>
                             </button>
-                        </div>
+                        </div> */}
                     </form>
                 </div>
             </div>

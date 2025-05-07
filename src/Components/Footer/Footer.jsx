@@ -14,24 +14,26 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 const Footer = () => {
 
-  const {handleSendMessage} = useContext(AuthContext);
+  const { handleSendMessage } = useContext(AuthContext);
 
   return (
     <>
-      <div className="bg-[url('https://i.ibb.co.com/2trFcPk/13.jpg')] mt-17 sm:px-4 py-16">
+      <div className="bg-[url('https://i.ibb.co.com/2trFcPk/13.jpg')] mt-17 sm:px-6 md:py-16 py-8">
         <div className="lg:max-w-7xl md:max-w-xl max-w-sm mx-auto">
-          <img
-            src={logo}
-            className="lg:h-20 h-16"
-            alt=""
-          />
 
-          <div className="flex md:flex-row flex-col justify-between">
+          <div className="flex md:flex-row  gap-6 flex-col items-center justify-between">
             {/* Left */}
             <div className="flex flex-col gap-6 lg:w-1/2 w-full">
-              <h1 className="font-rancho text-3xl lg:text-5xl font-semibold">
-                Slash Coffee Emporium
-              </h1>
+              <div className="flex flex-row items-center gap-1">
+                <img
+                  src={logo}
+                  className="lg:h-20 h-16"
+                  alt=""
+                />
+                <h1 className="font-rancho text-2xl lg:text-5xl font-semibold">
+                  Slash Coffee Emporium
+                </h1>
+              </div>
               <p>
                 Always ready to be your friend. Come & Contact with us to share
                 your memorable moments, to share with your best companion.
@@ -59,7 +61,7 @@ const Footer = () => {
 
             {/* Right */}
             <form onSubmit={handleSendMessage} className="lg:w-1/2 w-full flex flex-col gap-3">
-              <h1 className="font-rancho text-3xl lg:text-5xl font-semibold">
+              <h1 className="font-rancho text-2xl lg:text-5xl font-semibold">
                 Create a Support Ticket
               </h1>
               <label className="input input-bordered font-semibold font-raleway w-full flex items-center gap-2">
