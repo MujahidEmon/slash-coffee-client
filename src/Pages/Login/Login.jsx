@@ -3,6 +3,7 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import loginImg from '../../assets/images/more/6.png'
+import Swal from "sweetalert2";
 const Login = () => {
     const [showPass, setShowPass] = useState(false)
     const { login, googleLogin, gitHubLogin } = useContext(AuthContext)
@@ -24,35 +25,40 @@ const Login = () => {
 
             })
             .catch(error => {
-                console.log(error);
+                console.log(error.message);
+                Swal.fire({
+                    // title: "The Internet?",
+                    text: `${error.message}`,
+                    icon: "question"
+                  });
             })
 
     }
 
-    const handleGoogleLogin = () => {
-        googleLogin()
-            .then(result => {
-                console.log(result.user);
-                navigate('/')
-            })
-            .catch(error => {
-                console.error(error);
+    // const handleGoogleLogin = () => {
+    //     googleLogin()
+    //         .then(result => {
+    //             console.log(result.user);
+    //             navigate('/')
+    //         })
+    //         .catch(error => {
+    //             console.error(error);
 
-            })
-    }
+    //         })
+    // }
 
-    const handleGitHubLogin = () => {
-        gitHubLogin()
-            .then(res => {
-                console.log(res.user);
-                navigate('/')
+    // const handleGitHubLogin = () => {
+    //     gitHubLogin()
+    //         .then(res => {
+    //             console.log(res.user);
+    //             navigate('/')
 
-            })
-            .catch(error => {
-                console.error(error);
+    //         })
+    //         .catch(error => {
+    //             console.error(error);
 
-            })
-    }
+    //         })
+    // }
     return (
         <div className="bg-[url('https://i.ibb.co.com/6bMvLDn/11.png')]  bg-cover bg-center">
             <div className="lg:max-w-7xl max-w-lg mt-17 rounded-xl py-6 bg-[#F4F3F0]  items-center md:flex-row flex-col flex mx-auto">

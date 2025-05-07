@@ -18,7 +18,7 @@ const Footer = () => {
 
   return (
     <>
-      <div className="bg-[url('https://i.ibb.co.com/2trFcPk/13.jpg')] mt-17 sm:px-6 md:py-16 py-8">
+      <div className="bg-[url('https://i.ibb.co.com/2trFcPk/13.jpg')] sm:px-6 md:py-16 py-8">
         <div className="lg:max-w-7xl md:max-w-xl max-w-sm mx-auto">
 
           <div className="flex md:flex-row  gap-6 flex-col items-center justify-between">
@@ -96,10 +96,10 @@ const Footer = () => {
                 placeholder="Your Message"
                 name="message"
               ></textarea>
-              <button className="btn   w-fit btn-outline rounded-4xl font-rancho text-lg btn-secondary">
+              <button className="btn   w-fit btn-outline border-[#E3B577] rounded-4xl font-rancho text-lg ">
                 Send Message
               </button>
-              <Link className="font-raleway cursor-pointer btn  btn-accent" onClick={() => {
+              <Link className="font-raleway cursor-pointer btn bg-[#E3B577]" onClick={() => {
                 window.scrollTo({ top: 0, behavior: "smooth" })
               }} to={'/manage'}>Manage</Link>
             </form>

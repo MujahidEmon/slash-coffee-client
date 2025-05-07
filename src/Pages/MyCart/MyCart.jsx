@@ -40,7 +40,7 @@ const MyCart = () => {
                         <div className="mt-8 space-y-2">
                             <button
                                 type="button"
-                                className="text-sm px-4 py-2.5 w-full font-semibold tracking-wide bg-slate-800 hover:bg-slate-900 text-white rounded-md"
+                                className="text-sm px-4 py-2.5 w-full font-semibold tracking-wide bg-[#E3B577] hover:bg-slate-900 text-white rounded-md"
                             >
                                 <Link to={'/checkout'}>Order Now</Link>
                             </button>
