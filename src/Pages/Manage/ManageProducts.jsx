@@ -19,7 +19,7 @@ const ManageProducts = () => {
 
             <div className=" lg:max-w-7xl mx-auto ">
 
-                <div className=" mx-auto w-fit grid grid-flow-row lg:grid-cols-2 justify-center items-center gap-9 ">
+                <div className=" mx-auto w-fit grid grid-flow-row md:grid-cols-1 lg:grid-cols-2 justify-center items-center gap-9 ">
 
                     {
                         Coffees.map((coffee, _id) => <CoffeeCard key={_id} setCoffees={setCoffees} coffee={coffee}></CoffeeCard>)

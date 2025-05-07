@@ -19,7 +19,7 @@ const Navbar = () => {
       <div className="navbar-start">
         <div className="dropdown lg:hidden">
           <div tabIndex={0} role="button">
-            <img className="lg:w-10 w-8 flex lg:hidden" src={logo} alt="" />
+            <img className="lg:w-10 w-8 flex md:hidden lg:hidden" src={logo} alt="" />
             {/* <div className="flex navbar-center flex-row items-center ">
               <Link to={"/"} className="text-center lg:text-3xl text-sm font-semibold text-white font-rancho">
                 Slash Coffee Emporium
@@ -48,7 +48,7 @@ const Navbar = () => {
       </div>
 
       {/* Center Section - FIXED */}
-      <div className="navbar-center absolute left-1/2 transform -translate-x-1/2 font-bold text-white hidden lg:flex">
+      <div className="navbar-center absolute left-1/2 transform -translate-x-1/2 font-bold text-white hidden md:flex">
         <ul className="menu menu-horizontal">
           <li><Link to={"/"}>Home</Link></li>
           <li><Link to={"/coffees"}>All Products</Link></li>

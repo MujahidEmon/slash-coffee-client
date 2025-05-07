@@ -10,7 +10,7 @@ const Banner = () => {
         AOS.init({ duration: 600, once: false });
       }, []);
     return (
-        <div className="bg-[url('https://i.ibb.co.com/G46T3KX8/24.jpg')] bg-cover  bg-center w-screen h-screen lg:h-[600px] font-raleway bg-fixed object-contain gap-8 lg:gap-16  lg:flex grid justify-center items-center grid-cols-2  max-w-screen lg:p-0 p-6 text-white">
+        <div className="bg-[url('https://i.ibb.co.com/G46T3KX8/24.jpg')] bg-cover  bg-center w-screen h-screen md:h-[600px] font-raleway bg-fixed object-contain gap-8 md:gap-16  md:flex grid justify-center items-center grid-cols-2  max-w-screen lg:p-0 p-6 text-white">
             <div data-aos="zoom-in-up"  className="flex justify-center items-center text-center flex-col lg:w-3xs w-36 gap-3">
                 <img className="w-12 lg:w-16" src={icon1} alt="" />
                 <h1 className="font-rancho text-3xl">Awesome Aroma</h1>

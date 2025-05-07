@@ -58,7 +58,7 @@ const Checkout = () => {
       <div>
         <section className="bg-[url('https://i.ibb.co.com/fNtQhMV/1.png')] bg-no-repeat bg-cover font-raleway py-8 antialiased md:py-16">
           <form action="#" onSubmit={handlePlaceOrder} className="mx-auto max-w-screen-xl px-4 2xl:px-0">
-            <div className="mt-6 sm:mt-8 flex lg:flex-row flex-col-reverse lg:items-start lg:gap-12 xl:gap-16">
+            <div className="mt-6 sm:mt-8 flex md:flex-row flex-col-reverse lg:items-start lg:gap-12 xl:gap-16">
               <div className="min-w-0 flex-1 space-y-8">
                 <div className="space-y-4">
                   <h2 className="text-xl font-semibold text-gray-900">
