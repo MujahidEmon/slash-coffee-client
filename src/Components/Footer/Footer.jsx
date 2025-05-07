@@ -97,7 +97,9 @@ const Footer = () => {
               <button className="btn   w-fit btn-outline rounded-4xl font-rancho text-lg btn-secondary">
                 Send Message
               </button>
-              <Link className="font-raleway cursor-pointer btn  btn-accent" to={'/manage'}>Manage</Link>
+              <Link className="font-raleway cursor-pointer btn  btn-accent" onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" })
+              }} to={'/manage'}>Manage</Link>
             </form>
           </div>
         </div>
