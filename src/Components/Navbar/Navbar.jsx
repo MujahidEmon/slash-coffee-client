@@ -14,17 +14,17 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar relative justify-between bg-[url('https://i.ibb.co.com/Ws9RY1T/15.jpg')]">
+    <div className="navbar relative  justify-between bg-[url('https://i.ibb.co.com/Ws9RY1T/15.jpg')]">
       {/* Left Section */}
       <div className="navbar-start">
         <div className="dropdown lg:hidden">
           <div tabIndex={0} role="button">
-            <div className="flex navbar-center flex-row justify-center items-center ">
-              <img className="lg:w-10 w-8 md:flex hidden" src={logo} alt="" />
-              <Link to={"/"} className="text-center lg:text-3xl text-lg font-semibold text-white font-rancho">
+            {/* <div className="flex navbar-center flex-row items-center ">
+              <img className="lg:w-10 w-8" src={logo} alt="" />
+              <Link to={"/"} className="text-center lg:text-3xl text-sm font-semibold text-white font-rancho">
                 Slash Coffee Emporium
               </Link>
-            </div>
+            </div> */}
           </div>
           <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
             <li><Link to={"/"}>Home</Link></li>
@@ -39,9 +39,9 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="lg:flex lg:flex-row items-center gap-2 hidden btn-ghost text-xl">
+        <div className="flex flex-row items-center md:gap-2 gap-1 lg:text-xl">
           <img className="lg:w-10 w-8" src={logo} alt="" />
-          <Link to={"/"} className="text-center lg:text-3xl text-lg text-white font-rancho">
+          <Link to={"/"} className="lg:text-3xl text-sm font-semibold text-white font-rancho">
             Slash Coffee Emporium
           </Link>
         </div>
