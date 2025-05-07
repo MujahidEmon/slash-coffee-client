@@ -18,7 +18,7 @@ const Footer = () => {
 
   return (
     <>
-      <div className="bg-[url('https://i.ibb.co.com/2trFcPk/13.jpg')] mt-17 py-16">
+      <div className="bg-[url('https://i.ibb.co.com/2trFcPk/13.jpg')] mt-17 sm:px-4 py-16">
         <div className="lg:max-w-7xl md:max-w-xl max-w-sm mx-auto">
           <img
             src={logo}

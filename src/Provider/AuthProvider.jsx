@@ -71,7 +71,7 @@ const AuthProvider = ({ children }) => {
 
   // ☕ Load coffees
   useEffect(() => {
-    fetch("https://slash-expresso-emporium-server.vercel.app/coffees")
+    fetch("https://slash-expresso-emporium-server.onrender.com/coffees")
       .then((res) => res.json())
       .then((data) => setCoffees(data));
   }, []);
@@ -103,7 +103,7 @@ const AuthProvider = ({ children }) => {
       message: form.get("message"),
     };
 
-    fetch("https://slash-expresso-emporium-server.vercel.app/complains", {
+    fetch("https://slash-expresso-emporium-server.onrender.com/complains", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(newComplain),

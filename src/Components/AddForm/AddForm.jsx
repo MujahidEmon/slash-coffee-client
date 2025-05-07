@@ -24,7 +24,7 @@ const AddForm = () => {
 
 
     // Sending data to Server
-    fetch('https://slash-expresso-emporium-server.vercel.app/coffees', {
+    fetch('https://slash-expresso-emporium-server.onrender.com/coffees', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

@@ -6,7 +6,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 const Delivered = () => {
   const {setLoading} = useContext(AuthContext)
   const status = encodeURIComponent("Delivered");
-  const url = `https://slash-expresso-emporium-server.vercel.app/orders?status=${status}`;
+  const url = `https://slash-expresso-emporium-server.onrender.com/orders?status=${status}`;
   const [orders, setOrders] = useState([]);
 
   // Function to fetch orders
@@ -46,7 +46,7 @@ const Delivered = () => {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://slash-expresso-emporium-server.vercel.app/orders/${_id}`, {
+        fetch(`https://slash-expresso-emporium-server.onrender.com/orders/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

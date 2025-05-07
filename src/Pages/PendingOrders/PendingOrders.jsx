@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 const PendingOrders = () => {
   // loading orders using context
   const { loading, setLoading } = useContext(AuthContext);
-  const url = `https://slash-expresso-emporium-server.vercel.app/orders?status=Pending`;
+  const url = `https://slash-expresso-emporium-server.onrender.com/orders?status=Pending`;
   const [orders, setOrders] = useState([])
   console.log(orders);
   useEffect(() => {
@@ -34,7 +34,7 @@ const PendingOrders = () => {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://slash-expresso-emporium-server.vercel.app/orders/${_id}`, {
+        fetch(`https://slash-expresso-emporium-server.onrender.com/orders/${_id}`, {
           method: 'DELETE'
         })
           .then(res => res.json())

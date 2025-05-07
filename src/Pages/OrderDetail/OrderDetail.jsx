@@ -25,7 +25,7 @@ const OrderDetail = () => {
 
 
         // Sending data to Server
-        fetch(`https://slash-expresso-emporium-server.vercel.app/orders/${order._id}`, {
+        fetch(`https://slash-expresso-emporium-server.onrender.com/orders/${order._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

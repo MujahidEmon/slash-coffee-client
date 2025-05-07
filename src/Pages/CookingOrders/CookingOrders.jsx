@@ -5,7 +5,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 const CookingOrders = () => {
     const{setLoading} = useContext(AuthContext)
-    const url = `https://slash-expresso-emporium-server.vercel.app/orders?status=Cooking`;
+    const url = `https://slash-expresso-emporium-server.onrender.com/orders?status=Cooking`;
     const [orders, setOrders] = useState([])
     console.log(orders);
     useEffect(() => {
@@ -31,7 +31,7 @@ const CookingOrders = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://slash-expresso-emporium-server.vercel.app/orders/${_id}`, {
+                fetch(`https://slash-expresso-emporium-server.onrender.com/orders/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

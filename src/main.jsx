@@ -36,7 +36,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("https://slash-expresso-emporium-server.vercel.app/coffees"),
+        loader: () => fetch("https://slash-expresso-emporium-server.onrender.com/coffees"),
       },
       {
         path: "/addCoffee",
@@ -46,12 +46,12 @@ const router = createBrowserRouter([
         path: "/updateCoffee/:id",
         element: <PrivateRoutes><UpdatePage></UpdatePage></PrivateRoutes>,
         loader: ({ params }) =>
-          fetch(`https://slash-expresso-emporium-server.vercel.app/coffees/${params.id}`),
+          fetch(`https://slash-expresso-emporium-server.onrender.com/coffees/${params.id}`),
       },
       {
         path: "/coffeeDetails/:id",
         element: <CoffeeDetailsPage></CoffeeDetailsPage>,
-        loader: ({ params }) => fetch(`https://slash-expresso-emporium-server.vercel.app/coffees/${params.id}`)
+        loader: ({ params }) => fetch(`https://slash-expresso-emporium-server.onrender.com/coffees/${params.id}`)
       },
       {
         path: "/login",
@@ -106,7 +106,7 @@ const router = createBrowserRouter([
         path: "/updateOrder/:id",
         element: <PrivateRoutes><OrderDetail></OrderDetail></PrivateRoutes>,
         loader: ({ params }) =>
-          fetch(`https://slash-expresso-emporium-server.vercel.app/orders/${params.id}`),
+          fetch(`https://slash-expresso-emporium-server.onrender.com/orders/${params.id}`),
       },
       {
         path: '/supports',
@@ -116,7 +116,7 @@ const router = createBrowserRouter([
         path: "/complains/:id",
         element: <PrivateRoutes><SupportDetail></SupportDetail></PrivateRoutes>,
         loader: ({ params }) =>
-          fetch(`https://slash-expresso-emporium-server.vercel.app/complains/${params.id}`),
+          fetch(`https://slash-expresso-emporium-server.onrender.com/complains/${params.id}`),
       },
     ],
   },
